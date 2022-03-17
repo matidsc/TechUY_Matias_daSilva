@@ -2,7 +2,7 @@ import { React,useState } from "react";
 import "../styles/NavBar.scss";
 import { HiMenuAlt1 } from "react-icons/hi";
 import { AnimatePresence, motion } from "framer-motion";
-import { AiOutlineShoppingCart } from "react-icons/ai";
+import CartWidget from "./CartWidget";
 
 function NavBar() {
   const [menuIsVisible, setShowMenu] = useState(false);
@@ -55,9 +55,7 @@ function NavBar() {
           </motion.nav>
         
       </AnimatePresence>
-      <div className="cartWrapper">
-        <AiOutlineShoppingCart size={35} />
-      </div>
+     <CartWidget/>
     </header>
   );
 }

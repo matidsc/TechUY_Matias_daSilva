@@ -6,6 +6,8 @@
   box-sizing: border-box;
 }
 body {
+  background-color: #e0e0e0;
+
   margin: 0;
   font-family: 'Fredoka','Open Sans', 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',

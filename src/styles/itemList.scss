@@ -1,0 +1,21 @@
+.itemListContainer {
+    display: flex;
+    row-gap: 100px;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+  .itemList {
+    display: flex;
+    width: 1000px;
+    height: 200px;
+    justify-content: space-around;
+    .item {
+      border-radius: 50px;
+      background: #e0e0e0;
+      box-shadow:  20px 20px 31px #d0d0d0,
+      -20px -20px 31px #f0f0f0;      
+      width: 180px;
+      height: 180px;
+    }
+  }
+}
