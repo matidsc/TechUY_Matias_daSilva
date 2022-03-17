@@ -1,13 +1,13 @@
 import { React,useState } from "react";
 import "../styles/NavBar.scss";
-import { AiOutlineShoppingCart } from "react-icons/ai";
 import { HiMenuAlt1 } from "react-icons/hi";
 import { AnimatePresence, motion } from "framer-motion";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 
 function NavBar() {
   const [menuIsVisible, setShowMenu] = useState(false);
 
-  const menuVariants = {
+  /*const menuVariants = {
     opened: {
       top: "10vh",
     },
@@ -15,12 +15,10 @@ function NavBar() {
       top: "-30vh",
     },
   };
-
-/*codigo temporal para arreglar animacion*/
-  window.onresize =()=> {
-    window.innerWidth>768 && setShowMenu(true)
-  };
-/*                                             */
+  
+  codigo temporal para arreglar animacion
+  window.onresize =()=> {window.innerWidth>768 && setShowMenu(true)}
+*/
   return (
     <header className="topBarWrapper">
       <HiMenuAlt1
@@ -29,16 +27,15 @@ function NavBar() {
         className="hamburger"
       />
       <h1>TechUY</h1>
-
       <AnimatePresence>
-        {menuIsVisible && (
-          <motion.nav
-            key="box"
+      
+          <motion.nav /* equivalente a un <nav>*/
+           /* key="box"
             variants={menuVariants}
             transition={{ duration: 0.5 }}
             exit={{ top: "-30vh" }}
             initial={{ top: "-30vh" }}
-            animate={menuIsVisible ? "opened" : "closed"}
+            animate={menuIsVisible ? "opened" : "closed"}*/
             className={menuIsVisible ? "visibleNav" : "hiddenNav"}
           >
             <ul>
@@ -56,9 +53,8 @@ function NavBar() {
               </li>
             </ul>
           </motion.nav>
-        )}
+        
       </AnimatePresence>
-
       <div className="cartWrapper">
         <AiOutlineShoppingCart size={35} />
       </div>
