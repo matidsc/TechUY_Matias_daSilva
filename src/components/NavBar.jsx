@@ -4,7 +4,7 @@ import { HiMenuAlt1 } from "react-icons/hi";
 import { AnimatePresence, motion } from "framer-motion";
 import CartWidget from "./CartWidget";
 
-function NavBar() {
+const NavBar=() =>{
   const [menuIsVisible, setShowMenu] = useState(false);
 
   /*const menuVariants = {
