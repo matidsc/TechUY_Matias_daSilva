@@ -1,0 +1,62 @@
+.itemListContainer {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 10vh auto;
+    width: 70%;
+    height: auto;
+    margin: auto;
+    row-gap: 10%;
+    justify-items: center;
+    background-color: #e0e0e0;
+    align-items: center;
+    h1{
+        text-align: center;
+    }
+    .itemList {
+        display: flex;
+        width:90%;
+        justify-content: space-around;
+        background-color: #e0e0e0;
+        flex-wrap: wrap; /*IMPORTANTE*/
+        row-gap: 20%;
+        .item {
+            cursor:default;
+            border-radius: 20px 20px 0 0;
+            background-color: white;
+            box-shadow:  20px 20px 31px #d0d0d0,
+            -20px -20px 31px #f0f0f0;      
+            height: auto;
+            width: 180px;
+            transition: all 0.5s ease ;
+           h1{
+            font-size: 1em;
+            font-weight: 300;
+           }
+            button{
+                width: 100%;
+                height: 15%;
+                background-color: #1A1818;
+                color: white;
+                border-radius: 0px 0 20px 20px;
+                transition: all 0.7s;
+                position: relative;
+                &:hover {
+                    background: lighten(#1A1818, 10%)
+                  
+                }
+
+            }
+            .infoItem{
+                display: flex;
+                padding:10%;
+                flex-direction: column;
+                height: 100%;
+                justify-content: space-between;
+                background-color: white;
+            }
+            &:hover{
+                transform: scale(1.05);
+            }
+        }
+      }
+}
