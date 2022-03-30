@@ -1,4 +1,4 @@
-import { React,useState } from "react";
+import { React,useState,useEffect } from "react";
 import "../styles/NavBar.scss";
 import { HiMenuAlt1 } from "react-icons/hi";
 import { AnimatePresence, motion } from "framer-motion";
@@ -6,7 +6,7 @@ import CartWidget from "./CartWidget";
 
 const NavBar=() =>{
   const [menuIsVisible, setShowMenu] = useState(false);
-
+   
   /*const menuVariants = {
     opened: {
       top: "10vh",
@@ -43,13 +43,16 @@ const NavBar=() =>{
                 <a>Inicio</a>
               </li>
               <li>
-                <a>Celulares</a>
+                <a>Procesadores</a>
               </li>
               <li>
-                <a>Smart Tvs</a>
+                <a>Tarjetas gráficas</a>
               </li>
               <li>
-                <a>SmartWatches</a>
+                <a>RAM</a>
+              </li>
+              <li>
+                <a>Almacenamiento</a>
               </li>
             </ul>
           </motion.nav>

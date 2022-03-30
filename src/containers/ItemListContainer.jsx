@@ -1,35 +1,41 @@
-import React from "react";
-import "../styles/itemList.scss";
+import React, { useEffect, useState } from "react";
+import "../styles/itemListContainer.scss";
 import ItemCount from "../components/itemCount";
-const ItemListContainer=({ greeting })=> {
+import ItemList from "../components/itemList";
+import Loading from "../components/loading";
+const ItemListContainer = ({ greeting }) => {
+/*
+     <ItemCount stock={0} initial={0} onAdd={onAdd} />
+        <ItemCount stock={10} initial={0} onAdd={onAdd} />
+        <ItemCount stock={5} initial={0} onAdd={onAdd} />
+    */
+  const [productos, setProductos] = useState([]);
+  const [isLoading, setIsLoading] = useState(true)
+  
+  useEffect(() => {
+    setTimeout(() => {
+      fetch(
+        "https://my-json-server.typicode.com/matidsc/SampleJSONPlaceholder/GPU"
+      )
+        .then((data) => data.json())
+        .then((items) => setProductos(items));
+        setIsLoading(false)
+    }, 2000);
+  }, []);
 
- /*<section className="itemListContainer">
-    
-      <div className="itemList">
-        <div className="item"></div>
-        <div className="item"></div>
-        <div className="item"></div>
-        <div className="item"></div>
-        <div className="item"></div>
-      </div>
-    </section>*/
-    const onAdd=(count)=>{
-
-      console.log(count)
-    }
+  const onAdd = (count) => {
+    console.log(count);
+  };
   return (
-    <section className="itemListContainer">
+    <div>
+   <section className="itemListContainer">
+        <h1>{greeting}</h1>
+         
+        {isLoading?<Loading/>:<ItemList productos={productos} />} 
+      </section>
       
-      <h1>{greeting}</h1>
-      <div className="itemList">
-      <ItemCount stock={0} initial={0} onAdd={onAdd}/>
-      <ItemCount stock={10} initial={0} onAdd={onAdd}/>
-      <ItemCount stock={5} initial={0} onAdd={onAdd}/>
-      </div>
-
-    </section>
-    
+     </div>
   );
-}
+};
 
 export default ItemListContainer;
