@@ -22,7 +22,7 @@ const ItemListContainer = ({ greeting }) => {
         setIsLoading(false)
     }, 2000);
   }, []);
-
+  
   const onAdd = (count) => {
     console.log(count);
   };

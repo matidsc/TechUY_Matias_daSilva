@@ -3,7 +3,7 @@ import "../styles/NavBar.scss";
 import { HiMenuAlt1 } from "react-icons/hi";
 import { AnimatePresence, motion } from "framer-motion";
 import CartWidget from "./CartWidget";
-
+import { NavLink } from "react-router-dom";
 const NavBar=() =>{
   const [menuIsVisible, setShowMenu] = useState(false);
    

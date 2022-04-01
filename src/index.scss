@@ -6,6 +6,10 @@
 	box-sizing: border-box;
 	font-family: 'Fredoka',sans-serif;
 }
+:root{
+	--button-bg-dark:#1A1818;
+	--main-bg-color:#e0e0e0;
+}
 body {
 	background-color: #e0e0e0;
 	margin: 0;
@@ -14,6 +18,8 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 button {
+	transition: all 0.7s;
+
 	&:enabled {
 		cursor: pointer;
 		border: none;

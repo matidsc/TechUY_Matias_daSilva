@@ -1,7 +1,9 @@
 import React from 'react'
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 const Item = ({producto}) => {
 
+ 
   return (
     <motion.div className='item'
     animate={{opacity:1}}
@@ -14,7 +16,7 @@ const Item = ({producto}) => {
         <p>US${producto.precio}</p>
 
         </div>
-        <button>Más detalles</button>
+        <button><Link to={`/${producto.categoria}/${producto.id}`}>Más detalles</Link></button>
 
     </motion.div>
   )

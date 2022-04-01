@@ -1,0 +1,42 @@
+.detailWrapper {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  .itemDetail {
+    background-color: white;
+    margin: auto;
+    width: 80%;
+    height: 80%;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    align-items: center;
+    justify-items: center;
+    img{
+        width: 50%;
+    }
+    .itemDetailInfo {
+        background-color: beige;
+      grid-area: 1/2/2/3;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+        height: 100%;
+        width: 100%;
+        padding: 6%;
+      h1 {
+      }
+      h2 {
+      }
+      button {
+        width: 25%;
+        height: 10%;
+        background-color: var(--button-bg-dark);
+        color: white;
+        &:hover {
+          background: lighten(#1A1818, 10%)
+        
+      }
+      }
+    }
+  }
+}

@@ -37,14 +37,17 @@
                 height: 15%;
                 background-color: #1A1818;
                 color: white;
-                border-radius: 0px 0 20px 20px;
+                border-radius: 0px 0 10px 10px;
                 transition: all 0.7s;
                 position: relative;
                 &:hover {
                     background: lighten(#1A1818, 10%)
                   
                 }
-
+                a{
+                    color: white;
+                    text-decoration: none;
+                }
             }
             .infoItem{
                 display: flex;
