@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ItemDetail from "../components/ItemDetail";
 import "../styles/ItemDetailContainer.scss";
-import Loading from '../components/loading'
+import Loading from "../components/loading";
 const ItemDetailContainer = () => {
   const [details, setDetails] = useState([]);
   const { categoryId, id } = useParams();
-  const[isLoading,setIsLoading]=useState(true)
+  const [isLoading, setIsLoading] = useState(true);
 
   const getItem = () => {
     fetch(
@@ -19,14 +19,13 @@ const ItemDetailContainer = () => {
   useEffect(() => {
     setTimeout(() => {
       getItem();
-      setIsLoading(false)
-
+      setIsLoading(false);
     }, 2000);
   }, [id]);
 
   return (
     <div className="detailWrapper">
-      {isLoading?<Loading/>: <ItemDetail details={details} />}
+      {isLoading ? <Loading /> : <ItemDetail details={details} />}
     </div>
   );
 };
