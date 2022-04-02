@@ -13,6 +13,7 @@ const Item = ({producto}) => {
         <div className='infoItem'>
         <h1>{producto.modelo}</h1>
         <img src={producto.pictureURL}></img>
+        <span/>
         <p>US${producto.precio}</p>
 
         </div>

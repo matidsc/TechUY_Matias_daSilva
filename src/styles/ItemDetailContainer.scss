@@ -24,18 +24,39 @@
         width: 100%;
         padding: 6%;
       h1 {
+        
       }
       h2 {
+
+      }
+      div{
+        width: 70%;
+        height: 10%;
       }
       button {
-        width: 25%;
-        height: 10%;
+        width: 30%;
+        height: 100%;
         background-color: var(--button-bg-dark);
         color: white;
+        a{
+          color: white;
+        }
+
         &:hover {
           background: lighten(#1A1818, 10%)
         
       }
+      }
+      button:nth-child(2){
+        margin-left: 1vw;
+        background-color: transparent;
+        outline: solid 2px #1A1818;
+        a{
+          color: black;
+        }
+        &:hover{
+            background-color: darken(beige,  8);
+        }
       }
     }
   }

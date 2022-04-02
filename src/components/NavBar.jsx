@@ -3,10 +3,11 @@ import "../styles/NavBar.scss";
 import { HiMenuAlt1 } from "react-icons/hi";
 import { AnimatePresence, motion } from "framer-motion";
 import CartWidget from "./CartWidget";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
+import {IoIosArrowDropdownCircle} from 'react-icons/io'
 const NavBar=() =>{
   const [menuIsVisible, setShowMenu] = useState(false);
-   
+   const[showCategories,setShowCategories]=useState(false)
   /*const menuVariants = {
     opened: {
       top: "10vh",
@@ -19,6 +20,15 @@ const NavBar=() =>{
   codigo temporal para arreglar animacion
   window.onresize =()=> {window.innerWidth>768 && setShowMenu(true)}
 */
+const menuVariants = {
+  opened: {
+    top: "10vh",
+  },
+  closed: {
+    top: "-30vh",
+  },
+};
+
   return (
     <header className="topBarWrapper">
       <HiMenuAlt1
@@ -26,7 +36,7 @@ const NavBar=() =>{
         size={25}
         className="hamburger"
       />
-      <h1>TechUY</h1>
+      <Link to={'/'}><h1>TechUY</h1></Link>
       <AnimatePresence>
       
           <motion.nav /* equivalente a un <nav>*/
@@ -42,17 +52,30 @@ const NavBar=() =>{
               <li>
                 <a>Inicio</a>
               </li>
+             
               <li>
-                <a>Procesadores</a>
+                <a onClick={()=>setShowCategories(!showCategories)}> <IoIosArrowDropdownCircle/><span>categorías</span></a>
+              </li>
+              <AnimatePresence>
+              <motion.div 
+                variants={menuVariants}
+                transition={{ duration: 0.5 }}
+                exit={{ top: "-30vh" }}
+                initial={{ top: "-30vh" }}
+                animate={showCategories ? "opened" : "closed"}
+                className="categoriesMenu" style={{display: showCategories? "flex": "none"}} > 
+                
+                  <Link to={'/GPU'}onClick={()=>setShowCategories(!showCategories)} ><button>Tarjetas gráficas</button></Link>
+                  <Link to={'/CPU'}onClick={()=>setShowCategories(!showCategories)}><button>Procesadores</button></Link>
+                 <Link to={'/SSD'}onClick={()=>setShowCategories(!showCategories)}> <button>Almacenamiento</button></Link>
+                
+              </motion.div>
+              </AnimatePresence>
+              <li>
+                <a>Sobre Nosotros </a>
               </li>
               <li>
-                <a>Tarjetas gráficas</a>
-              </li>
-              <li>
-                <a>RAM</a>
-              </li>
-              <li>
-                <a>Almacenamiento</a>
+                <a>Contacto</a>
               </li>
             </ul>
           </motion.nav>
