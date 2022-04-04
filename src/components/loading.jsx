@@ -49,6 +49,7 @@ const loadingCircleTransition = {
 
 const Loading=()=> {
   return (
+    <>
     <motion.div
       style={loadingContainer}
       variants={loadingContainerVariants}
@@ -71,6 +72,8 @@ const Loading=()=> {
         transition={loadingCircleTransition}
       />
     </motion.div>
+          
+</>
   );
 }
 export default Loading

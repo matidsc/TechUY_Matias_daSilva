@@ -20,7 +20,7 @@ const ItemDetailContainer = () => {
     setTimeout(() => {
       getItem();
       setIsLoading(false);
-    }, 1000);
+    }, 2000);
   }, [id]);
 
   return (
