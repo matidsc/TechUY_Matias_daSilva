@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/matidsc/TechUY_Matias_daSilva/static/css/main.4be50a5e.css",
-    "main.js": "/matidsc/TechUY_Matias_daSilva/static/js/main.66357726.js",
-    "index.html": "/matidsc/TechUY_Matias_daSilva/index.html",
-    "main.4be50a5e.css.map": "/matidsc/TechUY_Matias_daSilva/static/css/main.4be50a5e.css.map",
-    "main.66357726.js.map": "/matidsc/TechUY_Matias_daSilva/static/js/main.66357726.js.map"
+    "main.css": "/TechUY/static/css/main.4be50a5e.css",
+    "main.js": "/TechUY/static/js/main.66357726.js",
+    "index.html": "/TechUY/index.html",
+    "main.4be50a5e.css.map": "/TechUY/static/css/main.4be50a5e.css.map",
+    "main.66357726.js.map": "/TechUY/static/js/main.66357726.js.map"
   },
   "entrypoints": [
     "static/css/main.4be50a5e.css",
