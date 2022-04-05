@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 const ItemDetail = ({ details }) => {
   return (
     <motion.div
@@ -17,7 +18,7 @@ const ItemDetail = ({ details }) => {
 
         <div>
        
-          <button>Añadir al carrito</button>
+          <button><span>Añadir al carrito</span><AiOutlineShoppingCart size={30} className="buttonCart"/></button>
           <button>
             <Link to={`/${details.categoria}`}>Seguir viendo</Link>
           </button>

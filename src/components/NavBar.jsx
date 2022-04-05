@@ -5,6 +5,7 @@ import CartWidget from "./CartWidget";
 import { Link } from "react-router-dom";
 import { IoIosArrowDropdownCircle } from "react-icons/io";
 const NavBar = () => {
+  
   const [menuIsVisible, setShowMenu] = useState(false);
   const [showCategories, setShowCategories] = useState(false);
 
