@@ -7,7 +7,7 @@ const ItemDetail = ({ details }) => {
     <motion.div
       animate={{ opacity: 1 }}
       initial={{ opacity: 0 }}
-      transition={{ delay: 0.4 }}
+      transition={{ delay: 0.6 }}
       className="itemDetail"
     >
       <img src={details.pictureURL}></img>
