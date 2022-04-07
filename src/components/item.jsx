@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 const Item = ({producto}) => {
 
 
-  console.log(producto)
   return (
     <motion.div className='item'
     animate={{opacity:1}}

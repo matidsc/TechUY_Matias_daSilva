@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "../styles/itemListContainer.scss";
-import ItemList from "../components/itemList";
-import Loading from "../components/loading";
+import ItemList from "../components/ItemList";
+import Loading from "../components/Loading";
 import { useParams } from "react-router-dom";
-const ItemListContainer = ({ greeting,title }) => {
+const ItemListContainer = ({ greeting}) => {
 
   const [productos, setProductos] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -16,7 +16,7 @@ const ItemListContainer = ({ greeting,title }) => {
       fetch(
         categoryId
           ? `https://my-json-server.typicode.com/matidsc/SampleJSONPlaceholder/Productos?categoria=${categoryId}`
-          : `https://my-json-server.typicode.com/matidsc/SampleJSONPlaceholder/Productos?destacado=true`//La página de inicio muestra las GPUs por defecto
+          : `https://my-json-server.typicode.com/matidsc/SampleJSONPlaceholder/Productos?destacado=true`//La página de inicio muestra los productos destacados
       )
         .then((data) => data.json())
         .then((items) => setProductos(items));

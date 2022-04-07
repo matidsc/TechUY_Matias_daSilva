@@ -12,7 +12,13 @@ Las dependencias utilizadas :
 *   React Router - permite realizar un enrutamiento dinámico para la aplicación.
 *   React Icons - engloba íconos de las librerías más populares como Font Awesome y MaterialUI, además de que utiliza imports de ES6 que permimte incluir solamente los íconos que el proyecto utiliza, mejorando el rendimiento. 
 
-  
+## 🔗 Links de dependencias
+[Framer-motion](https://www.framer.com/motion/).
+[Sass](https://sass-lang.com/).
+[React Router](https://reactrouter.com/).
+[React Icons](https://react-icons.github.io/react-icons).
+
+
 <h2>💻 Tecnologías</h2>
 
 Tecnologías utilizadas en este proyecto:
