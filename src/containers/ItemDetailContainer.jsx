@@ -5,15 +5,16 @@ import "../styles/ItemDetailContainer.scss";
 import Loading from "../components/loading";
 const ItemDetailContainer = () => {
   const [details, setDetails] = useState([]);
-  const { categoryId, id } = useParams();
+  const { id } = useParams();
   const [isLoading, setIsLoading] = useState(true);
 
   const getItem = () => {
     fetch(
-      `https://my-json-server.typicode.com/matidsc/SampleJSONPlaceholder/${categoryId}/${id}`
+      `https://my-json-server.typicode.com/matidsc/SampleJSONPlaceholder/Productos/${id}`
     )
       .then((data) => data.json())
-      .then((details) => setDetails(details));
+      .then((details) => setDetails(details))
+      .catch((err) => console.log(err));
   };
 
   useEffect(() => {

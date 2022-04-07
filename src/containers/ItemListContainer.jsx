@@ -3,7 +3,7 @@ import "../styles/itemListContainer.scss";
 import ItemList from "../components/itemList";
 import Loading from "../components/loading";
 import { useParams } from "react-router-dom";
-const ItemListContainer = ({ greeting }) => {
+const ItemListContainer = ({ greeting,title }) => {
 
   const [productos, setProductos] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -15,8 +15,8 @@ const ItemListContainer = ({ greeting }) => {
     setTimeout(() => {
       fetch(
         categoryId
-          ? `https://my-json-server.typicode.com/matidsc/SampleJSONPlaceholder/${categoryId}`
-          : `https://my-json-server.typicode.com/matidsc/SampleJSONPlaceholder/GPU`//La página de inicio muestra las GPUs por defecto
+          ? `https://my-json-server.typicode.com/matidsc/SampleJSONPlaceholder/Productos?categoria=${categoryId}`
+          : `https://my-json-server.typicode.com/matidsc/SampleJSONPlaceholder/Productos?destacado=true`//La página de inicio muestra las GPUs por defecto
       )
         .then((data) => data.json())
         .then((items) => setProductos(items));
@@ -27,8 +27,7 @@ const ItemListContainer = ({ greeting }) => {
   return (
     <div>
       <section className="itemListContainer">
-        <h1>{categoryId ? categoryId : greeting}</h1>
-
+        <h1 className="greeting">{categoryId ? categoryId : greeting}</h1>
         {isLoading ? <Loading /> : <ItemList productos={productos} />}
       </section>
     </div>
