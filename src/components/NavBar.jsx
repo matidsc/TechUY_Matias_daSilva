@@ -10,7 +10,7 @@ const NavBar = () => {
 
   const categorias = [
     { nombre: "Tarjetas gráficas", direccion: "/GPU" },
-    { nombre: "Procesadores", direccion: "/CPU" },
+    { nombre: "Procesadores", direccion: "/Procesadores" },
     { nombre: "Almacenamiento", direccion: "/SSD" },
     { nombre: "Equipos armados", direccion: "/ARMADOS" },
   ];
@@ -49,7 +49,6 @@ const NavBar = () => {
                 <button>{item.nombre}</button>
               </Link>
             ))}
-
           </div>
           <li>
             <a>Sobre Nosotros</a>

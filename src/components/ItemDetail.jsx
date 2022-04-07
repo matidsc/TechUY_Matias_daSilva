@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import ItemCount from "./ItemCount";
 const ItemDetail = ({ details }) => {
+  const [itemCount, setItemCount]=useState()
+
+  const onAd=(count)=>{
+
+    
+  }
   return (
     <motion.div
       animate={{ opacity: 1 }}
@@ -17,8 +24,10 @@ const ItemDetail = ({ details }) => {
         <h2>US${details.precio}</h2>
 
         <div>
-       
-          <button><span>Añadir al carrito</span><AiOutlineShoppingCart size={30} className="buttonCart"/></button>
+          <button>
+            <span>Añadir al carrito</span>
+            <AiOutlineShoppingCart size={30} className="buttonCart" />
+          </button>
           <button>
             <Link to={`/${details.categoria}`}>Seguir viendo</Link>
           </button>
