@@ -4,12 +4,13 @@ import { Link } from "react-router-dom";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import ItemCount from "./ItemCount";
 const ItemDetail = ({ details }) => {
-  const [itemCount, setItemCount]=useState()
+  const [itemCount, setItemCount] = useState();
+  /*
+   */
+  const onAdd = (count) => {
+    setItemCount(count);
+  };
 
-  const onAd=(count)=>{
-
-    
-  }
   return (
     <motion.div
       animate={{ opacity: 1 }}
@@ -22,15 +23,25 @@ const ItemDetail = ({ details }) => {
         <h1>{details.modelo}</h1>
         <p>{details.descripcion}</p>
         <h2>US${details.precio}</h2>
+        <div className="itemDetailInteraction">
+          {itemCount > 0 ? (
+            <Link to={"/cart"} className=" finalizarComprabtn">
+              <motion.button
+                animate={{ opacity: 1 }}
+                initial={{ opacity: 0 }}
+                transition={{ duration: 0.1 }}
+              >
+                <span>Finalizar compra</span>
+                <AiOutlineShoppingCart size={30} className="buttonCart" />
+              </motion.button>
+            </Link>
+          ) : (
+            <ItemCount onAdd={onAdd} stock={details.stock} initial={1} />
+          )}
 
-        <div>
-          <button>
-            <span>Añadir al carrito</span>
-            <AiOutlineShoppingCart size={30} className="buttonCart" />
-          </button>
-          <button>
-            <Link to={`/${details.categoria}`}>Seguir viendo</Link>
-          </button>
+          <Link to={`/${details.categoria}`} className='seguirViendoBtn'>
+            <button>Seguir viendo</button>
+          </Link>
         </div>
       </div>
     </motion.div>
