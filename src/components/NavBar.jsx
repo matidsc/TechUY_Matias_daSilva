@@ -9,8 +9,6 @@ const NavBar = () => {
   const [menuIsVisible, setShowMenu] = useState(false);
   const [showCategories, setShowCategories] = useState(false);
 
-  const {getCantItems}=useContext(contexto)
-
   const categorias = [
     { nombre: "Tarjetas gráficas", direccion: "/GPU" },
     { nombre: "Procesadores", direccion: "/Procesadores" },
@@ -61,7 +59,6 @@ const NavBar = () => {
           <li>
             <a>Contacto</a>
           </li>
-
         </ul>
       </nav>
       <CartWidget/>
