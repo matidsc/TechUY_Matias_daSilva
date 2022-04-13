@@ -45,8 +45,9 @@ const NavBar = () => {
             className="categoriesMenu"
             style={{ display: showCategories ? "flex" : "none" }}
           >
-            {categorias.map((item) => (
+            {categorias.map((item,index) => (
               <Link
+              key={index}
                 to={item.direccion}
                 onClick={() => setShowCategories(!showCategories)}
               >
