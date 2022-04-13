@@ -4,10 +4,12 @@ import ItemListContainer from "./containers/ItemListContainer";
 import { BrowserRouter as Router, Routes, Route,useParams } from "react-router-dom";
 import ItemDetailContainer from "./containers/ItemDetailContainer";
 import CartContainer from "./containers/cartContainer";
+import Customprovider from "./context/context";
 function App() {
 
   return (
     <Router>
+      <Customprovider>
       <div className="App">
         <NavBar/>
         <Routes>
@@ -17,6 +19,7 @@ function App() {
           <Route path='/:categoryId' element={<ItemListContainer greeting={'Productos'}/>}/>          
         </Routes>
       </div>
+      </Customprovider>
     </Router>
   );
 }

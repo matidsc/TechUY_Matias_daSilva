@@ -1,14 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import ItemCount from "./ItemCount";
+import { contexto } from "../context/context";
 const ItemDetail = ({ details }) => {
   const [itemCount, setItemCount] = useState();
-  /*
-   */
+  const { addItem } = useContext(contexto);
+
   const onAdd = (count) => {
     setItemCount(count);
+    addItem(details, count);
   };
 
   return (
@@ -22,7 +24,8 @@ const ItemDetail = ({ details }) => {
       <div className="itemDetailInfo">
         <h1>{details.modelo}</h1>
         <p>{details.descripcion}</p>
-        <h2>US${details.precio}</h2>
+        <h2>{`US$${details.precio}`}</h2>
+
         <div className="itemDetailInteraction">
           {itemCount > 0 ? (
             <Link to={"/cart"} className=" finalizarComprabtn">
@@ -39,7 +42,7 @@ const ItemDetail = ({ details }) => {
             <ItemCount onAdd={onAdd} stock={details.stock} initial={1} />
           )}
 
-          <Link to={`/${details.categoria}`} className='seguirViendoBtn'>
+          <Link to={`/${details.categoria}`} className="seguirViendoBtn">
             <button>Seguir viendo</button>
           </Link>
         </div>

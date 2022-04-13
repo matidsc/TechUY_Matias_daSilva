@@ -31,15 +31,15 @@
         justify-content: baseline;
         align-items: flex-end;
         column-gap: 1vw;
-        .finalizarComprabtn{
+        .finalizarComprabtn {
           height: 50%;
           color: white;
           width: 50%;
-          button{
+          button {
             width: 100%;
             height: 100%;
             background-color: var(--button-bg-dark);
-              color: white;
+            color: white;
           }
           .buttonCart {
             display: none;
@@ -50,18 +50,15 @@
           height: 50%;
           color: white;
 
-          button{
+          button {
             width: 100%;
             height: 100%;
             background-color: beige;
             &:hover {
               background: darken(beige, 10%);
             }
-          } 
-          
+          }
 
-         
-         
           &:nth-child(2) {
             background-color: transparent;
             outline: solid 2px #1a1818;
@@ -94,44 +91,19 @@
         h1 {
           font-size: 1.7em;
         }
+
         .itemDetailInteraction {
-          align-self: baseline;
           width: 100%;
-          margin-bottom: 10vh;
-          button {
-            width: 50%;
-            &:nth-child(1) {
-              position: fixed;
-              bottom: 0;
-              width: 100vw;
-              max-height: 10vh;
-              left: 0;
-              font-size: 1.3em;
-              .buttonCart {
-                display: inline-block;
-                margin-left: 10vw;
-                vertical-align: middle;
-              }
-
-              background: linear-gradient(
-                -45deg,
-                var(--button-bg-dark),
-                rgb(60, 60, 60),
-                rgb(19, 19, 19)
-              );
-              background-size: 400% 400%;
-              animation: gradient 8s ease infinite;
-            }
-
-            &:nth-child(2) {
-              margin-left: 0;
-            }
+          margin-bottom: 15vh;
+          .finalizarComprabtn{
+            display: inline-block;
           }
         }
       }
     }
   }
 }
+
 @keyframes gradient {
   0% {
     background-position: 0% 50%;

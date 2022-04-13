@@ -1,12 +1,15 @@
-import { React, useState } from "react";
+import { React, useState,useContext } from "react";
 import "../styles/NavBar.scss";
 import { HiMenuAlt1 } from "react-icons/hi";
 import CartWidget from "./CartWidget";
 import { Link } from "react-router-dom";
 import { IoIosArrowDropdownCircle } from "react-icons/io";
+import { contexto } from "../context/context";
 const NavBar = () => {
   const [menuIsVisible, setShowMenu] = useState(false);
   const [showCategories, setShowCategories] = useState(false);
+
+  const {getCantItems}=useContext(contexto)
 
   const categorias = [
     { nombre: "Tarjetas gráficas", direccion: "/GPU" },
@@ -14,6 +17,7 @@ const NavBar = () => {
     { nombre: "Almacenamiento", direccion: "/SSD" },
     { nombre: "Equipos armados", direccion: "/ARMADOS" },
   ];
+  
   return (
     <header className="topBarWrapper">
       <HiMenuAlt1
@@ -56,9 +60,10 @@ const NavBar = () => {
           <li>
             <a>Contacto</a>
           </li>
+
         </ul>
       </nav>
-      <CartWidget />
+      <CartWidget/>
     </header>
   );
 };

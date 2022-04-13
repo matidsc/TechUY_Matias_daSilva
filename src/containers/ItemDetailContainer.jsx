@@ -8,18 +8,14 @@ const ItemDetailContainer = () => {
   const { id } = useParams();
   const [isLoading, setIsLoading] = useState(true);
 
-  const getItem = () => {
-    fetch(
-      `https://my-json-server.typicode.com/matidsc/SampleJSONPlaceholder/Productos/${id}`
-    )
-      .then((data) => data.json())
-      .then((details) => setDetails(details))
-      .catch((err) => console.log(err));
-  };
-
   useEffect(() => {
     setTimeout(() => {
-      getItem();
+      fetch(
+        `https://my-json-server.typicode.com/matidsc/SampleJSONPlaceholder/Productos/${id}`
+      )
+        .then((data) => data.json())
+        .then((details) => setDetails(details))
+        .catch((err) => console.log(err));
       setIsLoading(false);
     }, 2000);
   }, [id]);
