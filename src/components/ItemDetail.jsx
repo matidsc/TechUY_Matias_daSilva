@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { AiOutlineShoppingCart } from "react-icons/ai";
 import ItemCount from "./ItemCount";
 import { contexto } from "../context/context";
 const ItemDetail = ({ details }) => {
@@ -35,7 +34,6 @@ const ItemDetail = ({ details }) => {
                 transition={{ duration: 0.1 }}
               >
                 <span>Finalizar compra</span>
-                <AiOutlineShoppingCart size={30} className="buttonCart" />
               </motion.button>
             </Link>
           ) : (

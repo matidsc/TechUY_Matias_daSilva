@@ -84,22 +84,7 @@
     }
   }
 
-  .cartWrapper {
-    position: relative;
-  }
-  .cartWrapper::after {
-    content: "";
-    font-size: 5px;
-    display: block;
-    width: 10px;
-    height: 10px;
-    border-radius: 10px;
-    background-color: red;
-    position: absolute;
-    top: 0;
-    left: 100%;
-    text-align: center;
-  }
+
 }
 @media screen and(max-width:768px) {
   .topBarWrapper {
