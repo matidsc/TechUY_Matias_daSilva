@@ -17,12 +17,13 @@ const CartWidget = () => {
 };
 
 const styleNotification={
+  fontSize:"1em",
   position: "absolute",
   top: "-10px",
-  right: "-10px",
-  padding: "10% 15%",
+  right: "-15px",
+  padding: "5px 10px",
   borderRadius: "50%",
-  background: "red",
+  backgroundColor: "#F44336",
   color: "white",
 }
 const styleCart={position: "relative"}

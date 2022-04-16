@@ -44,10 +44,9 @@ const ItemCount = ({ stock, onAdd, initial }) => {
         onClick={addToCart}
         disabled={stock > 0 ? false : true}
       >
-                <AiOutlineShoppingCart size={18} className="buttonCart" />
+        <AiOutlineShoppingCart size={18} className="buttonCart" />
 
         {stock > 0 ? "Añadir al carrito" : "Sin stock"}
-
       </button>
     </div>
   );
