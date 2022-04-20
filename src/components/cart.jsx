@@ -2,12 +2,10 @@ import React, { useContext} from "react";
 import { contexto } from "../context/context";
 import { Link } from "react-router-dom";
 import "../styles/cart.scss";
-import{AiTwotoneDelete} from 'react-icons/ai'
+import CartItem from "./cartItem";
 const Cart = () => {
-  const { items, getPrecioTotal,deleteItem } = useContext(contexto);
+  const { items, getPrecioTotal,deleteItem,updateCantItem } = useContext(contexto);
 
-  const onDelete=()=>{
-  }
   return (
     <>
       {items.length > 0 ? (
@@ -15,19 +13,7 @@ const Cart = () => {
           <h1>Checkout</h1>
           {items.map((item) => {
             return (
-              <div className="cartItem">
-                <img src={item.pictureURL} />
-                <span className="modeloItem">{item.modelo}</span>
-                <div>
-                  <button className="setCantItemsbtn">-</button>
-                  <p>{item.cantidad}</p>
-                  <button className="setCantItemsbtn">+</button>
-                </div>
-                <span className="precioItem">{`US$${item.precio}`}</span>
-                <button title="Eliminar producto" className="deleteProduct" onClick={()=>deleteItem(item.id)}>
-                  <AiTwotoneDelete color="F44336" size={30}/>
-                  </button>
-              </div>
+              <CartItem onUpdateCant={updateCantItem} id={item.id} stock={item.stock}modelo={item.modelo} pictureURL={item.pictureURL} cantidad={item.cantidad} precio={item.precio} onDelete={deleteItem}/>
             );
           })}
           <span className="endLine"></span>
