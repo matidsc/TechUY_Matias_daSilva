@@ -8,37 +8,25 @@ const ItemCount = ({ stock, onAdd, initial }) => {
   const addToCart = () => {
     onAdd(count);
   };
+  const deleteOne = () => {
+    count > initial && setCount(count - 1);
+  };
+  const addOne = () => {
+    stock > count && setCount(count + 1);
+  };
   return (
     <div className="itemCountWrapper">
-      {stock > 0 ? (
+      {stock > 0 && (
         <>
-          <button
-            className="setCantItemsbtn"
-            onClick={
-              count > initial
-                ? () => {
-                    setCount(count - 1);
-                  }
-                : null
-            }
-          >
+          <button className="setCantItemsbtn" onClick={deleteOne}>
             -
           </button>
           <p>{count}</p>
-          <button
-            className="setCantItemsbtn"
-            onClick={
-              stock > count
-                ? () => {
-                    setCount(count + 1);
-                  }
-                : null
-            }
-          >
+          <button className="setCantItemsbtn" onClick={addOne}>
             +
           </button>
         </>
-      ) : null}
+      ) }
       <button
         className="addToCartbtn"
         onClick={addToCart}

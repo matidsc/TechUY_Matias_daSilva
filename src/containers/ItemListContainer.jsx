@@ -3,6 +3,8 @@ import "../styles/itemListContainer.scss";
 import ItemList from "../components/ItemList";
 import Loading from "../components/Loading";
 import { useParams } from "react-router-dom";
+import { getDocs, collection, query, where } from "firebase/firestore";
+import { db } from "../firebase/firebase";
 const ItemListContainer = ({ greeting }) => {
   const [productos, setProductos] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -12,15 +14,34 @@ const ItemListContainer = ({ greeting }) => {
     setIsLoading(true);
 
     setTimeout(() => {
-      fetch(
-        categoryId
-          ? `https://my-json-server.typicode.com/matidsc/SampleJSONPlaceholder/Productos?categoria=${categoryId}`
-          : `https://my-json-server.typicode.com/matidsc/SampleJSONPlaceholder/Productos?destacado=true` //La página de inicio muestra los productos destacados
-      )
-        .then((data) => data.json())
-        .then((items) => setProductos(items));
-      setIsLoading(false);
-    }, 2000);
+      const coleccionProductos = collection(db, "productos")
+      let consulta
+      categoryId
+        ? (consulta = query(
+            coleccionProductos,
+            where("categoria", "==", categoryId)
+          ))
+        : (consulta = query(
+            coleccionProductos,
+            where("destacado", "==", "true")
+          ));
+  
+      getDocs(consulta)
+        .then((result) => {
+          const lista = result.docs.map((producto) => {
+            const id = producto.id;
+            return {
+              id,
+              ...producto.data(),
+            };
+          });
+          setProductos(lista);
+          setIsLoading(false);
+          console.log()
+        })
+
+    }, 1000);
+
   }, [categoryId]);
 
   return (

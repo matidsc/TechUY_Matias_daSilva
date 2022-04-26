@@ -46,7 +46,6 @@ const Customprovider = ({ children }) => {
     return precioTotal;
   };
   const updateCantItem = (id, count) => {
-
     const index = items.indexOf(items.find((item) => item.id === id));
     const aux = [...items];
     aux[index].cantidad = count;

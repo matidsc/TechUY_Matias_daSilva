@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useContext } from "react";
 import { AiTwotoneDelete } from "react-icons/ai";
 import { contexto } from "../context/context";
 const CartItem = ({
@@ -9,14 +9,14 @@ const CartItem = ({
   cantidad,
   precio,
   onDelete,
-  onUpdateCant
 }) => {
   const [cartCantidad, setCartCantidad] = useState(cantidad);
+  const {updateCantItem}=useContext(contexto)
 
   useEffect(() => {
-    onUpdateCant(id,cartCantidad)
-  }, [cartCantidad])
-  
+    updateCantItem(id, cartCantidad);
+  }, [cartCantidad]);
+
   return (
     <div className="cartItem">
       <img src={pictureURL} />
@@ -26,7 +26,8 @@ const CartItem = ({
           onClick={
             cartCantidad > 1
               ? () => {
-                  setCartCantidad(cartCantidad - 1);                
+                  setCartCantidad(cartCantidad - 1);
+
                 }
               : null
           }

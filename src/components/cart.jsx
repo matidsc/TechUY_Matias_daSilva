@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "../styles/cart.scss";
 import CartItem from "./cartItem";
 const Cart = () => {
-  const { items, getPrecioTotal,deleteItem,updateCantItem } = useContext(contexto);
+  const { items, getPrecioTotal,deleteItem} = useContext(contexto);
 
   return (
     <>
@@ -13,7 +13,7 @@ const Cart = () => {
           <h1>Checkout</h1>
           {items.map((item) => {
             return (
-              <CartItem onUpdateCant={updateCantItem} id={item.id} stock={item.stock}modelo={item.modelo} pictureURL={item.pictureURL} cantidad={item.cantidad} precio={item.precio} onDelete={deleteItem}/>
+              <CartItem id={item.id} stock={item.stock}modelo={item.modelo} pictureURL={item.pictureURL} cantidad={item.cantidad} precio={item.precio} onDelete={deleteItem}/>
             );
           })}
           <span className="endLine"></span>
