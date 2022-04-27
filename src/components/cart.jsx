@@ -8,24 +8,7 @@ import {db} from '../firebase/firebase'
 import AnimatedPage from "./animatedPage";
 const Cart = () => {
   const { items, getPrecioTotal,deleteItem} = useContext(contexto);
-  const [idventa,setIdVenta]=useState()
-  useEffect(() => {
-    
-    const finalizarCompra=()=>{
-      const coleccionVentas= collection(db,'ventas')
-      addDoc(coleccionVentas,{
-       /* comprador,*/
-        items:items,
-        date:serverTimestamp(),
-        total:getPrecioTotal()
   
-      })
-      .then(result=>{
-          setIdVenta(result.id)
-      })
-    }
-   
-  }, [idventa])
   
   return (
     <>

@@ -40,7 +40,7 @@ const ItemListContainer = ({ greeting }) => {
           console.log()
         })
 
-    }, 1000);
+    }, 10);
 
   }, [categoryId]);
 
