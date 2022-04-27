@@ -62,7 +62,7 @@
           color: white;
           transition: all 0.7s;
           &:hover {
-            background: lighten(#1a1818, 10%);
+            background-color: lighten(#1a1818, 10%);
           }
         }
       }

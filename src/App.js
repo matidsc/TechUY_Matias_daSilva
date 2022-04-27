@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route,useParams } from "react-router-d
 import ItemDetailContainer from "./containers/ItemDetailContainer";
 import Cart from "./components/cart";
 import Customprovider from "./context/context";
+import FrmComprador from "./components/frmComprador";
 function App() {
 
   return (
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path='/' element={<ItemListContainer greeting="Productos destacados" title="Productos detacados"/>}/>
           <Route path='/cart' element={<Cart />}/>
+          <Route path='/checkout' element={<FrmComprador />}/>
           <Route path='/productos/:id' element={<ItemDetailContainer/>}/>
           <Route path='/:categoryId' element={<ItemListContainer greeting={'Productos'}/>}/>          
         </Routes>

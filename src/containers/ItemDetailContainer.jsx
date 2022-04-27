@@ -11,6 +11,7 @@ const ItemDetailContainer = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    
     setTimeout(() => {
       const documento = doc(db, "productos", id);
       getDoc(documento)
