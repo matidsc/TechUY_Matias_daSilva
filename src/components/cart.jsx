@@ -33,14 +33,22 @@ const Cart = () => {
         <AnimatedPage>
         <div className="cartWrapper">
           <h1>Carrito</h1>
+          
+          <div className="itemDetails">
+            <span>Detalles del producto</span>
+            <span>Cantidad</span>
+            <span>Precio</span>
+            <span>Total</span>
+          </div>
           {items.map((item) => {
             return (
               <CartItem id={item.id} stock={item.stock}modelo={item.modelo} pictureURL={item.pictureURL} cantidad={item.cantidad} precio={item.precio} onDelete={deleteItem}/>
             );
           })}
           <span className="endLine"></span>
-          <Link to={'/checkout'}><button>Siguiente paso</button></Link> 
           <div className="precioTotal">{`Total: US$${getPrecioTotal()}`}</div>
+          <Link className="finalizarBtn" to={'/checkout'}><button>Siguiente paso</button></Link> 
+
         </div>
         </AnimatedPage>) : (
         <div className="noHayItems">

@@ -20,9 +20,9 @@ const FrmComprador = () => {
         <div className="frmWrapper">
         <form>
           <h1>Ingresa tus datos</h1>
-          <input placeholder="Nombre" />
-          <input placeholder="Teléfono" />
-          <input placeholder="Email" />
+          <input type='text' placeholder="Nombre" />
+          <input type='tel' placeholder="Teléfono" />
+          <input type='email' placeholder="Email" />
             <button>Confirmar compra</button>
         </form>
         </div>
