@@ -5,6 +5,7 @@ import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { contexto } from "../context/context";
 import { db } from "../firebase/firebase";
+import { IoCopyOutline } from "react-icons/io5";
 import {
   collection,
   addDoc,
@@ -14,59 +15,82 @@ import {
 } from "firebase/firestore";
 
 const FrmComprador = () => {
-  const { items, getPrecioTotal,clear } = useContext(contexto);
-
+  const { items, getPrecioTotal, clear } = useContext(contexto);
+  const [comprador, setComprador] = useState();
   const [idventa, setIdVenta] = useState();
-
-  const finalizarCompra = (event) => {
-
+  const [showTicket, setShowTicket] = useState(false);
+  const handleChange = (event) => {
+    setComprador({ ...comprador, [event.target.name]: event.target.value });
+  };
+  const finalizarCompra = () => {
     const coleccionVentas = collection(db, "ventas");
-    console.log("hola");
     addDoc(coleccionVentas, {
-      nombre: "hola",
-      apellido: "chau",
+      comprador,
       items: items,
       date: serverTimestamp(),
       total: getPrecioTotal(),
     }).then((result) => {
-      console.log("ID RESULTADO ", result.id);
-
       setIdVenta(result.id);
-    }).catch(err=>console.err(err))
-
+    });
     items.forEach((item) => {
-      console.log("itemID: " + item.id);
       const orderDoc = doc(db, "productos", item.id);
       updateDoc(orderDoc, { stock: item.stock - item.cantidad });
-      console.log(idventa)
     });
-
+    clear();
+    setShowTicket(true);
   };
-
-
- 
-
   return (
     <AnimatedPage>
       <div className="frmCompradorWrapper">
-        <div className="leftPanelWrapper">
-          <h1>Ya casi terminas tu compra</h1>
-          <Link to={"/cart"}>
-            <button>
-              <MdOutlineKeyboardArrowLeft />
-              <span>Volver al carrito</span>
+        {!showTicket ? (
+          <>
+            <div className="leftPanelWrapper">
+              <h1>Ya casi terminas tu compra</h1>
+              <Link to={"/cart"}>
+                <button>
+                  <MdOutlineKeyboardArrowLeft />
+                  <span>Volver al carrito</span>
+                </button>
+              </Link>
+            </div>
+
+            <div className="frmWrapper">
+              <form onsubmit="return false">
+                <h1>Ingresa tus datos</h1>
+                <input
+                  onChange={handleChange}
+                  name="nombre"
+                  type="text"
+                  placeholder="Nombre"
+                />
+                <input
+                  onChange={handleChange}
+                  name="telefono"
+                  type="tel"
+                  placeholder="Teléfono"
+                />
+                <input
+                  onChange={handleChange}
+                  name="email"
+                  type="email"
+                  placeholder="Email"
+                />
+                <button type="button" onClick={() => finalizarCompra()}>
+                  Confirmar compra
+                </button>
+              </form>
+            </div>
+          </>
+        ) : (
+          <div className="compraCompletada">
+            <h1>Tu compra ha sido procesada correctamente</h1>
+            <h2>Guarda este código</h2>
+            <button onClick={()=>navigator.clipboard.writeText(idventa)}>
+              <span>{idventa}</span>
+              <IoCopyOutline />
             </button>
-          </Link>
-        </div>
-        <div className="frmWrapper">
-          <form onsubmit="return false">
-            <h1>Ingresa tus datos</h1>
-            <input type="text" placeholder="Nombre" />
-            <input type="tel" placeholder="Teléfono" />
-            <input type="email" placeholder="Email" />
-            <button type="button" onClick={()=>finalizarCompra()} >Confirmar compra</button>
-          </form>
-        </div>
+          </div>
+        )}
       </div>
     </AnimatedPage>
   );
