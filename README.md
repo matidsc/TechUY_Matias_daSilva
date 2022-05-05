@@ -25,15 +25,4 @@ Tecnologías utilizadas en este proyecto:
 
 *   ReactJS
 *   Sass
-*   JSON server - Para crear la fake REST API utilizada en la aplicación.
-<h2>💻 Funcionamiento</h2>
-
-Funcionamiento de la aplicación con JSON server:
-
-* La lista de productos la tomo de una REST API creada por mí,
-tanto itemlistcontainer como itemDetailcontainer obtienen información mediante fetch.
-* JSON server permite hacer requests con filtros, orden y búsqueda.
-Para esta entrega utilicé el filtro por categoría y por el atributo de destacado.
-El repositorio donde se encuentra el JSON es el siguiente: [Repositorio de github](https://github.com/matidsc/SampleJSONPlaceholder).
-
-
+*   Firebase-Firestore - Para almacenar y manipular los productos y ventas.
