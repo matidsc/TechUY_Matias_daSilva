@@ -1,11 +1,12 @@
 import "./App.css";
 import NavBar from "./components/NavBar";
 import ItemListContainer from "./containers/ItemListContainer";
-import { BrowserRouter as Router, Routes, Route,useParams } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import ItemDetailContainer from "./containers/ItemDetailContainer";
 import Cart from "./components/cart";
 import Customprovider from "./context/context";
 import FrmComprador from "./components/frmComprador";
+import BackToMain from "./components/backToMain";
 function App() {
 
   return (
@@ -15,6 +16,7 @@ function App() {
         <NavBar/>
         <Routes>
           <Route path='/' element={<ItemListContainer greeting="Productos destacados" title="Productos detacados"/>}/>
+          <Route path='*' element={<BackToMain boton='Volver al inicio'ruta="/" mensaje='Página no encontrada'/>}/>
           <Route path='/cart' element={<Cart />}/>
           <Route path='/checkout' element={<FrmComprador />}/>
           <Route path='/productos/:id' element={<ItemDetailContainer/>}/>

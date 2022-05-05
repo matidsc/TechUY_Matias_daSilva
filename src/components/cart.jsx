@@ -1,15 +1,13 @@
-import React, { useContext, useState,useEffect} from "react";
+import React, { useContext} from "react";
 import { contexto } from "../context/context";
-import { Link } from "react-router-dom";
 import "../styles/cart.scss";
 import CartItem from "./cartItem";
-import {addDoc, collection, serverTimestamp,updateDoc} from 'firebase/firestore'
-import {db} from '../firebase/firebase'
 import AnimatedPage from "./animatedPage";
+import BackToMain from "./backToMain";
+import { Link } from "react-router-dom";
 const Cart = () => {
   const { items, getPrecioTotal,deleteItem} = useContext(contexto);
-  
-  
+
   return (
     <>
       {items.length > 0 ? (
@@ -33,13 +31,8 @@ const Cart = () => {
           <Link className="finalizarBtn" to={'/checkout'}><button>Siguiente paso</button></Link> 
 
         </div>
-        </AnimatedPage>) : (
-        <div className="noHayItems">
-          <h1>El carrito se encuentra vacío</h1> 
-          <Link to={`/`}>
-            <button>Sigue buscando productos</button>
-          </Link>
-        </div>
+        </AnimatedPage>) : (<BackToMain mensaje='El carrito se encuentra vacío' ruta='/' boton='Sigue buscando productos'/>
+        
       )}
     </>
   );

@@ -5,17 +5,20 @@ import Loading from "../components/Loading";
 import { useParams } from "react-router-dom";
 import { getDocs, collection, query, where } from "firebase/firestore";
 import { db } from "../firebase/firebase";
+import BackToMain from "../components/backToMain";
 const ItemListContainer = ({ greeting }) => {
   const [productos, setProductos] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [itemsExists, setItemsExists] = useState(true);
+
   const { categoryId } = useParams();
 
   useEffect(() => {
     setIsLoading(true);
 
     setTimeout(() => {
-      const coleccionProductos = collection(db, "productos")
-      let consulta
+      const coleccionProductos = collection(db, "productos");
+      let consulta;
       categoryId
         ? (consulta = query(
             coleccionProductos,
@@ -25,32 +28,41 @@ const ItemListContainer = ({ greeting }) => {
             coleccionProductos,
             where("destacado", "==", "true")
           ));
-  
-      getDocs(consulta)
-        .then((result) => {
-          const lista = result.docs.map((producto) => {
-            const id = producto.id;
-            return {
-              id,
-              ...producto.data(),
-            };
-          });
-          setProductos(lista);
-          setIsLoading(false);
-          console.log()
-        })
 
-    }, 10);
-
+      getDocs(consulta).then((result) => {
+        const lista = result.docs.map((producto) => {
+          const id = producto.id;
+          return {
+            id,
+            ...producto.data(),
+          };
+        });
+        return lista.length === 0
+          ? setItemsExists(false)
+          : (setProductos(lista), setIsLoading(false), setItemsExists(true));
+      });
+    }, 2000);
   }, [categoryId]);
 
-  return (
+  return itemsExists ? (
     <div>
       <section className="itemListContainer">
-        <h1 className="greeting">{categoryId ? categoryId : greeting}</h1>
-        {isLoading ? <Loading /> : <ItemList productos={productos} />}
+        {isLoading ? (
+          <Loading />
+        ) : (
+          <>
+            <h1 className="greeting">{categoryId ? categoryId : greeting}</h1>
+            <ItemList productos={productos} />
+          </>
+        )}
       </section>
     </div>
+  ) : (
+    <BackToMain
+      boton="Volver al inicio"
+      ruta="/"
+      mensaje="Categoría no válida"
+    />
   );
 };
 
