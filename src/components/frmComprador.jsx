@@ -38,8 +38,9 @@ const FrmComprador = () => {
       const orderDoc = doc(db, "productos", item.id);
       updateDoc(orderDoc, { stock: item.stock - item.cantidad });
     });
-    clear();
     setShowTicket(true);
+
+    clear();
   };
 
   const scrollToBottom=()=>{
@@ -51,9 +52,12 @@ const FrmComprador = () => {
 
   return (
     <AnimatedPage>
-      {items.length > 0 ? (
+    
         <div className="frmCompradorWrapper">
-          {!showTicket ? (
+          {!showTicket && !items.length>0?
+            <BackToMain mensaje="Nada que ver aquí" ruta="/" boton="Ir al inicio" />
+
+            :(!showTicket ? (
             <>
               <div className="leftPanelWrapper">
                 <h1>Ya casi terminas tu compra</h1>
@@ -103,11 +107,10 @@ const FrmComprador = () => {
                 <IoCopyOutline />
               </button>
             </div>
-          )}
+          ))}
         </div>
-      ) : (
-        <BackToMain mensaje="Nada que ver aquí" ruta="/" boton="Ir al inicio" />
-      )}
+
+
     </AnimatedPage>
   );
 };

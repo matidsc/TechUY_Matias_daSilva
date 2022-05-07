@@ -146,6 +146,7 @@
       display: none;
     }
     .cartItem {
+      column-gap: 10px;
       width: 90%;
       grid-template-columns: 33% 55% 12%;
       grid-template-rows: repeat(3, 33%);
