@@ -15,7 +15,7 @@ function App() {
       <div className="App">
         <NavBar/>
         <Routes>
-          <Route path='/' element={<ItemListContainer greeting="Productos destacados" title="Productos detacados"/>}/>
+          <Route path='/' element={<ItemListContainer greeting="Productos populares" title="Productos detacados"/>}/>
           <Route path='*' element={<BackToMain boton='Volver al inicio'ruta="/" mensaje='Página no encontrada'/>}/>
           <Route path='/cart' element={<Cart />}/>
           <Route path='/checkout' element={<FrmComprador />}/>

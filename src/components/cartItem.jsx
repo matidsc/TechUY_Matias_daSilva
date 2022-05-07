@@ -24,6 +24,7 @@ const CartItem = ({
     stock > cartCantidad && setCartCantidad(cartCantidad + 1);
   };
   return (
+    <>
     <div className="cartItem">
       <img src={pictureURL} />
       <span className="modeloItem">{modelo}</span>
@@ -37,7 +38,8 @@ const CartItem = ({
         </button>
       </div>
       <span className="precioItem">{`US$${precio}`}</span>
-      <span className="precioItem">{`US$${precio*cartCantidad}`}</span>
+    
+      <span className="precioTotalItem"><label>Total: </label> {`US$${precio*cartCantidad}`}</span>
 
       <button
         title="Eliminar producto"
@@ -46,7 +48,10 @@ const CartItem = ({
       >
         <AiTwotoneDelete color="F44336" size={30} />
       </button>
+
     </div>
+          <span className="endLineProdcuto"></span>
+</>
   );
 };
 

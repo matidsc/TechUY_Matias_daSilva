@@ -10,10 +10,9 @@ const Item = ({ producto }) => {
       transition={{ delay: 0.5 }}
     >
       <div className="infoItem">
-        <h1>{producto.modelo}</h1>
-        <img src={producto.pictureURL}></img>
-        <span/>
-        <p>{`US$${producto.precio}`}</p>
+      <img src={producto.pictureURL}></img>
+        <span className='modeloItem'>{producto.modelo}</span>
+        <span className='precioItem'>{`${producto.precio} US$`}</span>
       </div>
       <Link to={`/productos/${producto.id}`}>
         <button>Más detalles</button>

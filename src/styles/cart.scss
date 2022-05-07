@@ -1,17 +1,29 @@
+.pageWrapper {
+  width: 100vw;
+  background-color: white;
+  height: 100%;
+}
 .cartWrapper {
-  background: linear-gradient(to right, white, beige);
-
+  margin-bottom: 3vh;
   overflow-x: hidden;
-  width: 80vw;
   margin: auto;
-  padding: 3vh 0;
   display: flex;
   align-items: center;
   flex-direction: column;
   row-gap: 2vh;
   h1 {
+    position: relative;
+    left: 10%;
+    font-weight: 700;
     margin: 3vh 0;
-    align-self: center;
+    font-size: 2.2em;
+
+    align-self: flex-start;
+  }
+  .endLineCart {
+    width: 80%;
+    height: 0.5px;
+    background-color: rgb(166, 166, 166);
   }
   .itemDetails,
   .cartItem {
@@ -26,6 +38,16 @@
     font-weight: 600;
     grid-template-columns: 40% 15% 15% 15% 15%;
     color: rgb(79, 79, 79);
+    margin-top: 3vh;
+    font-size: 1em;
+  }
+  .endLineProdcuto {
+    width: 64%;
+    align-self: flex-end;
+    position: relative;
+    right: 10%;
+    height: 1px;
+    background-color: rgb(166, 166, 166);
   }
   .finalizarBtn {
     justify-self: baseline;
@@ -39,7 +61,7 @@
       height: 100%;
       padding: 5%;
       background-color: var(--button-bg-dark);
-
+      font-weight: 600;
       color: white;
       font-size: 1em;
       svg {
@@ -47,14 +69,17 @@
       }
     }
   }
+
   .cartItem {
     height: 20vh;
     grid-template-columns: 20% 20% 15% 15% 15% 15%;
+
     .setCantWrapper {
       display: flex;
-      width:80%;
+      width: 80%;
       height: 50%;
       span {
+        font-weight: 600;
         text-align: center;
         width: 50%;
       }
@@ -69,16 +94,20 @@
         }
       }
     }
-    .modeloItem {
+    .modeloItem,
+    .precioItem,.precioTotalItem {
       font-size: 1.1em;
-      font-weight: 300;
+      font-weight: 500;
     }
+.precioTotalItem{
+  label{
+    display: none;
+  }
+}
     img {
       width: 50%;
     }
 
-    .precioItem {
-    }
     .deleteProduct {
       padding: 1vw;
       background-color: transparent;
@@ -91,12 +120,90 @@
   }
   .endLine {
     height: 2px;
-    width: 80%;
+    width: 60%;
+    align-self: flex-end;
     margin: 1vh 0;
     background-color: rgb(79, 79, 79);
   }
   .precioTotal {
     align-self: flex-end;
     font-weight: 600;
+    position: relative;
+    right: 10%;
+    background-color: #1a1818;
+    color: white;
+    padding: 1%;
+    strong {
+      font-size: 1.1em;
+    }
+  }
+}
+@media screen and(max-width:768px) {
+
+  .cartWrapper {
+
+    .itemDetails {
+      display: none;
+    }
+    .cartItem {
+      width: 90%;
+      grid-template-columns: 33% 55% 12%;
+      grid-template-rows: repeat(3, 33%);
+      img{
+        grid-area: 1/1/3/2;
+        width: 70%;
+      }
+      .modeloItem{
+        grid-area: 1/2/3/3;
+      }
+      .precioItem{
+        grid-area: 3/1/4/2;
+        font-weight: 700;
+              }
+      .precioTotalItem{
+        grid-area: 3/2/4/3;
+        text-align: center;
+        label{
+          display: block;
+        }
+      }
+      .deleteProduct,.setCantWrapper{
+        justify-self: flex-end;
+        width: 100%;
+
+      }
+      .deleteProduct{
+        grid-area: 1/3/2/4;
+
+      }
+      .setCantWrapper{
+        grid-area: 2/3/5/4;
+        flex-direction: column;
+        height: 100%;
+        
+        span{
+          line-height: 2em;
+          vertical-align: middle;
+        }
+        button{
+          height: 33%;
+          font-weight: 700;
+          font-size: 1.2em;
+        }
+        button,span{
+          width: 100%;
+        }
+      }
+    }
+    .precioTotal {
+      align-self: center;
+      position: static;
+      padding: 2%;
+    }
+    .finalizarBtn{
+      position: relative;
+      bottom: 0;
+      width: 80%;
+    }
   }
 }

@@ -123,3 +123,51 @@
     }
 }
 }
+@media screen and(max-width:768px){
+    .frmCompradorWrapper{
+    
+    flex-direction: column;
+    width: 100vw;
+        height: auto;
+    .leftPanelWrapper{
+        grid-template-rows: 20% 80% ;
+        a{
+            order: 1;
+        }
+        h1{ 
+            order: 2;
+            justify-self: center;
+            text-align: center;
+        }
+        height: 50vh;
+    }
+    .leftPanelWrapper, .frmWrapper{
+       
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+    .frmWrapper{
+        
+        height: 100vh;
+        h1{
+            text-align: center;
+        }
+        form{
+            padding: 0;
+            svg{
+                animation: animacionArrow alternate-reverse infinite 1s;
+            }
+            button{
+                width: 80%;
+            }
+        }
+    }
+}
+}
+@keyframes animacionArrow {
+    
+    to{
+        transform: translatey(-15px);
+    }
+}

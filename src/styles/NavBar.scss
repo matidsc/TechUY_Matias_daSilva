@@ -27,13 +27,12 @@
       justify-content: space-between;
     }
     li {
-      font-weight: 600;
       text-transform: uppercase;
     }
     a {
       padding: 5px;
       color: white;
-
+      font-weight: 600;
       cursor: pointer;
       white-space: nowrap;
       transition: 0.5s all ease;
@@ -107,7 +106,6 @@
       top: 10vh;
       background-color: rgb(19, 19, 19);
       backdrop-filter: blur(10px);
-      height: 30vh;
       ul {
         flex-direction: column;
         row-gap: 20px;

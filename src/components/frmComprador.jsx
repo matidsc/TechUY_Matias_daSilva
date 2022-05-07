@@ -1,4 +1,4 @@
-import React, {useContext, useState } from "react";
+import React, { useContext, useState } from "react";
 import AnimatedPage from "./animatedPage";
 import "../styles/frmComprador.scss";
 import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
@@ -7,6 +7,7 @@ import { contexto } from "../context/context";
 import { db } from "../firebase/firebase";
 import { IoCopyOutline } from "react-icons/io5";
 import BackToMain from "./backToMain";
+import { IoIosArrowDown } from "react-icons/io";
 import {
   collection,
   addDoc,
@@ -40,11 +41,18 @@ const FrmComprador = () => {
     clear();
     setShowTicket(true);
   };
+
+  const scrollToBottom=()=>{
+    window.scrollTo({
+      top:document.documentElement.scrollHeight,
+      behavior:"smooth"
+    })
+  }
+
   return (
     <AnimatedPage>
-      {
-        items.length>0?(
-          <div className="frmCompradorWrapper">
+      {items.length > 0 ? (
+        <div className="frmCompradorWrapper">
           {!showTicket ? (
             <>
               <div className="leftPanelWrapper">
@@ -58,8 +66,10 @@ const FrmComprador = () => {
               </div>
 
               <div className="frmWrapper">
-                <form onsubmit="return false">
-                  <h1>Ingresa tus datos</h1>
+                <form>
+                  <h1>Ingresa tus datos</h1>      
+                    <IoIosArrowDown onClick={scrollToBottom} size={15} />
+                 
                   <input
                     onChange={handleChange}
                     name="nombre"
@@ -95,10 +105,9 @@ const FrmComprador = () => {
             </div>
           )}
         </div>
-
-        ):<BackToMain mensaje='Nada que ver aquí' ruta='/' boton='Ir al inicio'/>
-       
-      }
+      ) : (
+        <BackToMain mensaje="Nada que ver aquí" ruta="/" boton="Ir al inicio" />
+      )}
     </AnimatedPage>
   );
 };

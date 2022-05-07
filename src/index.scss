@@ -1,19 +1,21 @@
 @import "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap";
 @import "https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400&display=swap";
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
 * {
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
-	font-family: 'Fredoka',sans-serif;
+	font-family: 'Quicksand',sans-serif;
 }
 :root{
 	--button-bg-dark:#1A1818;
 	--main-bg-color:#e0e0e0;
 }
 body {
-	background-color: #e0e0e0;
+	background-color: white;
 	margin: 0;
-	font-family: 'Open Sans', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }

@@ -22,9 +22,8 @@ const ItemDetail = ({ details }) => {
       <img src={details.pictureURL}></img>
       <div className="itemDetailInfo">
         <h1>{details.modelo}</h1>
-        <p>{details.descripcion}</p>
         <h2>{`US$${details.precio}`}</h2>
-
+        <p>{details.descripcion}</p>
         <div className="itemDetailInteraction">
           {itemCount > 0 ? (
             <Link to={"/cart"} className=" finalizarComprabtn">
