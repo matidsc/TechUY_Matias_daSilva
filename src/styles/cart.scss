@@ -168,7 +168,6 @@
         }
       }
       .deleteProduct,.setCantWrapper{
-        justify-self: flex-end;
         width: 100%;
 
       }
@@ -204,6 +203,11 @@
       position: relative;
       bottom: 0;
       width: 80%;
+    }
+    .endLineProdcuto{
+      width: 90%; 
+      align-self: center;
+      position: static;
     }
   }
 }
