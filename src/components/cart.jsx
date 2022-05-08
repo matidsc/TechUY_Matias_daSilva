@@ -23,9 +23,9 @@ const Cart = () => {
             <span>Precio</span>
             <span>Total</span>
           </div>
-          {items.map((item) => {
+          {items.map((item,index) => {
             return (
-              <CartItem id={item.id} stock={item.stock}modelo={item.modelo} pictureURL={item.pictureURL} cantidad={item.cantidad} precio={item.precio} onDelete={deleteItem}/>
+              <CartItem key={index} id={item.id} stock={item.stock}modelo={item.modelo} pictureURL={item.pictureURL} cantidad={item.cantidad} precio={item.precio} onDelete={deleteItem}/>
             );
           })}
           <div className="precioTotal"><strong>Total a pagar: </strong>{`US$${getPrecioTotal()}`}</div>

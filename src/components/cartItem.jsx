@@ -39,7 +39,7 @@ const CartItem = ({
       </div>
       <span className="precioItem">{`US$${precio}`}</span>
     
-      <span className="precioTotalItem"><label>Total: </label> {`US$${precio*cartCantidad}`}</span>
+      <span className="precioTotalItem"><label>| Total: </label> {`US$${precio*cartCantidad}`}</span>
 
       <button
         title="Eliminar producto"

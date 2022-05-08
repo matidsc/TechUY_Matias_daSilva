@@ -54,9 +54,8 @@ const FrmComprador = () => {
     <AnimatedPage>
     
         <div className="frmCompradorWrapper">
-          {!showTicket && !items.length>0?
+          {!showTicket && items.length===0?
             <BackToMain mensaje="Nada que ver aquí" ruta="/" boton="Ir al inicio" />
-
             :(!showTicket ? (
             <>
               <div className="leftPanelWrapper">
