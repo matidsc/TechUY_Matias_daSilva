@@ -11,7 +11,7 @@ const AboutPage = () => {
         <div className="rightText">
 
         <p>TechUY es una tienda uruguaya de hardware, especializados tanto en  componentes gaming como en componentes pensados para la oficina.
-        Aseguramos nuestra calidad vendiendo las marcas con más demandadas del mercado.</p> 
+        Aseguramos nuestra calidad vendiendo las marcas más demandadas del mercado.</p> 
 
         </div>
     </div>

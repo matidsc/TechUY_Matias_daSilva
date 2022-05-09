@@ -36,9 +36,9 @@
         span{
           background-color: darken(beige, 10);
           font-weight: 500;
-          vertical-align: middle;
           svg{
-            margin-right: 2%;
+            vertical-align: sub;
+            margin-right: 1%;
           }
         }
       }
@@ -102,7 +102,7 @@
     }
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
   .detailWrapper {
     height: auto;
     .itemDetail {
@@ -117,6 +117,7 @@
         padding: 10%;
       }
       .itemDetailInfo {
+        padding-bottom: 15vh;
         min-height: 60vh;
                 row-gap: 5vh;
         h1 {

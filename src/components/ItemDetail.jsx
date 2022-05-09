@@ -8,7 +8,6 @@ import {AiOutlineShoppingCart} from 'react-icons/ai'
 const ItemDetail = ({ details }) => {
   const [itemCount, setItemCount] = useState();
   const { addItem, getCantInCart, isInCart } = useContext(contexto);
-  console.log(isInCart(details.id))
   const onAdd = (count) => {
     setItemCount(count);
     addItem(details, count);
@@ -27,7 +26,7 @@ const ItemDetail = ({ details }) => {
         <h1>{details.modelo}</h1>
         <div className="priceWrapper">
           <h2>{`US$${details.precio}`}</h2>
-          <span style={{display:isInCart(details.id)?"inline":"none"}}  ><AiOutlineShoppingCart/>Producto en el carrito</span>
+          <span style={{display:isInCart(details.id)?"inline":"none"}}  ><AiOutlineShoppingCart size={20}/>Producto en el carrito</span>
         </div>
         <p>{details.descripcion}</p>
         <div className="itemDetailInteraction">

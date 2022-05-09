@@ -1,0 +1,100 @@
+.contactWrapper{
+
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    .leftText,.frmWrapper{
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+    }
+    .leftText{
+
+        background-color: var(--button-bg-dark);
+        color: white;
+        h1{
+            text-align: center;
+
+            font-size: 3em;
+
+        }
+    }
+    .frmWrapper{
+        padding: 10%;
+        background-color: beige;
+        form{
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            height: 100%;
+            width: 90%;
+            align-items: center;
+        }
+        input{
+            padding: 5%;          
+
+        }
+        input:not([type="submit"]){
+            background-color: beige;
+            border-width: 0 0 2px;
+            border-color: black;
+            outline: 0;
+            color: black;
+            width: 100%;
+        }
+        input[type="submit"]{
+            background-color: var(--button-bg-dark);
+            color: white;
+            align-self: center;
+            width: 80%;
+            cursor: pointer;
+            &:hover{
+                background-color: lighten(#1a1818,10);
+            }
+        }
+        p{
+            font-size: 1.3em;
+            font-weight: 500;
+
+            
+        }
+    }
+}
+
+@media screen and(max-width:768px){
+    .contactWrapper{
+
+            flex-direction: column;
+        .leftText,.frmWrapper{
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+        .leftText{
+    
+            height: 40%;
+
+            h1{
+                text-align: center;
+                font-size: 3em;
+    
+            }
+        }
+        .frmWrapper{
+            height: 60%;
+            display: flex;
+            flex-direction: column;
+            padding: 10%;
+            background-color: beige;
+            input{
+                }
+       
+        }
+    }
+
+}

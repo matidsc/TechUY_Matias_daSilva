@@ -22,7 +22,7 @@ body {
 a{
 	text-decoration: none;
 }
-button {
+button, input[type="submit"] {
 transition: all 0.7s;
 
 	&:enabled {

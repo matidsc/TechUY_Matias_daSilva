@@ -8,7 +8,7 @@ import Customprovider from "./context/context";
 import FrmComprador from "./components/frmComprador";
 import BackToMain from "./components/backToMain";
 import AboutPage from "./components/aboutPage";
-import ContactoPage from "./components/contactoPage";
+import ContactPage from "./components/contactPage";
 function App() {
 
   return (
@@ -19,7 +19,7 @@ function App() {
         <Routes>
           <Route path='/' element={<ItemListContainer greeting="Productos populares" title="Productos detacados"/>}/>
           <Route path='*' element={<BackToMain boton='Volver al inicio'ruta="/" mensaje='Página no encontrada'/>}/>
-          <Route path='/contacto' element={<ContactoPage/>}/>
+          <Route path='/contacto' element={<ContactPage/>}/>
           <Route path='/sobrenosotros' element={<AboutPage />}/>
           <Route path='/cart' element={<Cart/>}/>
           <Route path='/checkout' element={<FrmComprador />}/>
