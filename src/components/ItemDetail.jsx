@@ -3,16 +3,19 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import ItemCount from "./ItemCount";
 import { contexto } from "../context/context";
+import {AiOutlineShoppingCart} from 'react-icons/ai'
+
 const ItemDetail = ({ details }) => {
   const [itemCount, setItemCount] = useState();
-  const { addItem } = useContext(contexto);
-
+  const { addItem, getCantInCart, isInCart } = useContext(contexto);
+  console.log(isInCart(details.id))
   const onAdd = (count) => {
     setItemCount(count);
     addItem(details, count);
   };
 
   return (
+    
     <motion.div
       animate={{ opacity: 1 }}
       initial={{ opacity: 0 }}
@@ -22,7 +25,10 @@ const ItemDetail = ({ details }) => {
       <img src={details.pictureURL}></img>
       <div className="itemDetailInfo">
         <h1>{details.modelo}</h1>
-        <h2>{`US$${details.precio}`}</h2>
+        <div className="priceWrapper">
+          <h2>{`US$${details.precio}`}</h2>
+          <span style={{display:isInCart(details.id)?"inline":"none"}}  ><AiOutlineShoppingCart/>Producto en el carrito</span>
+        </div>
         <p>{details.descripcion}</p>
         <div className="itemDetailInteraction">
           {itemCount > 0 ? (
@@ -36,7 +42,11 @@ const ItemDetail = ({ details }) => {
               </motion.button>
             </Link>
           ) : (
-            <ItemCount onAdd={onAdd} stock={details.stock} initial={1} />
+            <ItemCount
+              onAdd={onAdd}
+              stock={details.stock - getCantInCart(details.id)}
+              initial={1}
+            />
           )}
 
           <Link to={`/${details.categoria}`} className="seguirViendoBtn">

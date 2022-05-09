@@ -34,6 +34,16 @@ const Customprovider = ({ children }) => {
     });
     return cant;
   };
+  const getCantInCart=(id)=>{
+
+    if (isInCart(id)){
+      var item= items.find((item) => item.id === id)
+      return item.cantidad;
+    }else{
+      return 0
+    }
+    
+  }
 
   const getPrecioTotal = () => {
     var precioTotal = 0;
@@ -58,9 +68,11 @@ const Customprovider = ({ children }) => {
         addItem,
         deleteItem,
         getCantItems,
+        isInCart,
         clear,
         getPrecioTotal,
         updateCantItem,
+        getCantInCart
       }}
     >
       {children}

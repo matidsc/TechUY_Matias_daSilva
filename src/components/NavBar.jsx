@@ -29,7 +29,7 @@ const NavBar = () => {
       <nav className={menuIsVisible ? "visibleNav" : "hiddenNav"}>
         <ul>
           <li>
-            <Link to={"/"}>Inicio</Link>
+            <Link onClick={()=>setShowMenu(!menuIsVisible)} to={"/"}>Inicio</Link>
           </li>
 
           <li>
@@ -47,17 +47,17 @@ const NavBar = () => {
               <Link
               key={index}
                 to={item.direccion}
-                onClick={() => setShowCategories(!showCategories)}
+                onClick={() => {setShowCategories(!showCategories);setShowMenu(!menuIsVisible)}}
               >
                 <button>{item.nombre}</button>
               </Link>
             ))}
           </div>
           <li>
-            <a>Sobre Nosotros</a>
+            <Link onClick={()=>setShowMenu(!menuIsVisible)} to={'/sobrenosotros'}>Sobre Nosotros</Link>
           </li>
           <li>
-            <a>Contacto</a>
+            <Link onClick={()=>setShowMenu(!menuIsVisible)} to={'/contacto'}>Contacto</Link>
           </li>
         </ul>
       </nav>

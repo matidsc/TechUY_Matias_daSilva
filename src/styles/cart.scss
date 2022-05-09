@@ -72,7 +72,7 @@
   .cartItem {
     height: 20vh;
     grid-template-columns: 20% 20% 15% 15% 15% 15%;
-
+    
     .setCantWrapper {
       align-items: center;
       display: flex;
@@ -99,6 +99,9 @@
       font-size: 1.1em;
       font-weight: 500;
     }
+    .modeloItem{
+      margin-right: 1.5vw;
+    }
 .precioTotalItem{
   label{
     display: none;
@@ -114,7 +117,7 @@
       text-transform: uppercase;
       font-weight: 600;
       &:hover {
-        background-color: darken(beige, 5);
+        background-color:beige;
       }
     }
   }

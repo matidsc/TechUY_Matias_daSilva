@@ -23,6 +23,25 @@
       height: 100%;
       width: 100%;
       padding: 10%;
+      .priceWrapper{
+        width: 100%;
+        h2,span{
+          padding:1%;
+
+        }
+        h2{
+          display: inline;
+          margin-right: 2vw;
+        }
+        span{
+          background-color: darken(beige, 10);
+          font-weight: 500;
+          vertical-align: middle;
+          svg{
+            margin-right: 2%;
+          }
+        }
+      }
       p{
         font-weight: 500;
       }
@@ -32,8 +51,10 @@
         display: flex;
         justify-content: baseline;
         align-items: flex-end;
-        column-gap: 1vw;
-        
+        column-gap: 2vw;
+        .finalizarComprabtn,.seguirViendoBtn{
+          outline: solid 2px #1a1818;
+        }
         .finalizarComprabtn {
           height: 50%;
           color: white;
@@ -68,7 +89,7 @@
 
           &:nth-child(2) {
             background-color: transparent;
-            outline: solid 2px #1a1818;
+           
             a {
               color: black;
             }
@@ -83,8 +104,9 @@
 }
 @media screen and (max-width: 768px) {
   .detailWrapper {
-    min-height: 90vh;
+    height: auto;
     .itemDetail {
+
       width: 100%;
       margin: 0;
       height: 100%;
@@ -95,13 +117,18 @@
         padding: 10%;
       }
       .itemDetailInfo {
+        min-height: 60vh;
+                row-gap: 5vh;
         h1 {
           font-size: 1.7em;
         }
 
         .itemDetailInteraction {
           width: 100%;
-          margin-bottom: 15vh;
+          height: 5vh;
+          .finalizarComprabtn,.seguirViendoBtn{
+            height: 100%;
+          }
           .finalizarComprabtn {
             display: inline-block;
           }

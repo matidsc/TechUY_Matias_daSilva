@@ -51,7 +51,7 @@
       position: absolute;
       top: 10vh;
       background-color: beige;
-      width: 80%;
+      min-width: 80%;
       left: 50%;
       transform: translateX(-50%);
       height: 100px;
@@ -101,6 +101,7 @@
       display: block;
       min-width: 0;
       width: 100%;
+      height: 35vh;
       padding: 10%;
       position: absolute;
       top: 10vh;
@@ -109,13 +110,15 @@
       ul {
         flex-direction: column;
         row-gap: 20px;
+        margin: auto;
+        height: 100%;
       }
       .categoriesMenu {
         padding: 10%;
         width: 100vw;
         height: auto;
         flex-direction: column;
-        top: 30vh;
+        top: 35vh;
         row-gap: 10px;
         button {
           height: 5vh;
