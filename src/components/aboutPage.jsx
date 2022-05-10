@@ -1,7 +1,9 @@
 import React from 'react'
 import '../styles/aboutPage.scss'
+import AnimatedPage from '../components/animatedPage'
 const AboutPage = () => {
   return (
+    <AnimatedPage>
     <div className='aboutWrapper'>
         
         <div className="leftText">
@@ -15,6 +17,7 @@ const AboutPage = () => {
 
         </div>
     </div>
+    </AnimatedPage>
   )
 }
 

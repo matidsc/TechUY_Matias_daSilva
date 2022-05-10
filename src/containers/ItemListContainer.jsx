@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import { getDocs, collection, query, where } from "firebase/firestore";
 import { db } from "../firebase/firebase";
 import BackToMain from "../components/backToMain";
+import AnimatedPage from "../components/animatedPage";
 const ItemListContainer = ({ greeting }) => {
   const [productos, setProductos] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -46,16 +47,21 @@ const ItemListContainer = ({ greeting }) => {
 
   return itemsExists ? (
     <div>
-      <section className="itemListContainer">
-        {isLoading ? (
-          <Loading />
-        ) : (
-          <>
-            <h1 className="greeting">{categoryId ? categoryId : greeting}</h1>
-            <ItemList productos={productos} />
-          </>
-        )}
-      </section>
+        <section className="itemListContainer">
+          {isLoading ? (
+            <Loading />
+          ) : (
+
+            <AnimatedPage>
+
+
+              <h1 className="greeting">{categoryId ? categoryId : greeting}</h1>
+              <ItemList productos={productos} />
+              </AnimatedPage>
+
+            
+          )}
+        </section>
     </div>
   ) : (
     <BackToMain

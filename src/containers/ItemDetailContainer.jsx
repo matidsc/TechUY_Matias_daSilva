@@ -6,6 +6,8 @@ import Loading from "../components/Loading";
 import { doc, getDoc} from "firebase/firestore";
 import { db } from "../firebase/firebase";
 import BackToMain from "../components/backToMain";
+import AnimatedPage from '../components/animatedPage' 
+
 const ItemDetailContainer = () => {
   const [details, setDetails] = useState([]);
   const { id } = useParams();
@@ -30,9 +32,13 @@ const ItemDetailContainer = () => {
   }, [id]);
 
   return itemExists? (
+    <AnimatedPage>
+
     <div className="detailWrapper">
       {isLoading ? <Loading /> : <ItemDetail details={details} />}
     </div>
+    </AnimatedPage>
+
   ) : (
     <BackToMain boton='Volver al inicio' ruta='/' mensaje='Producto no encontrado'/>
   );

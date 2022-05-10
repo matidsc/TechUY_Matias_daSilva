@@ -31,7 +31,7 @@ const ItemDetail = ({ details }) => {
         <p>{details.descripcion}</p>
         <div className="itemDetailInteraction">
           {itemCount > 0 ? (
-            <Link to={"/cart"} className=" finalizarComprabtn">
+            <Link to={"/TechUY_Matias_daSilva/cart"} className=" finalizarComprabtn">
               <motion.button
                 animate={{ opacity: 1 }}
                 initial={{ opacity: 0 }}
@@ -48,7 +48,7 @@ const ItemDetail = ({ details }) => {
             />
           )}
 
-          <Link to={`/${details.categoria}`} className="seguirViendoBtn">
+          <Link to={`/TechUY_Matias_daSilva/${details.categoria}`} className="seguirViendoBtn">
             <button>Seguir viendo</button>
           </Link>
         </div>

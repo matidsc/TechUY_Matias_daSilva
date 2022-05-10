@@ -17,14 +17,14 @@ function App() {
       <div className="App">
         <NavBar/>
         <Routes>
-          <Route path='/' element={<ItemListContainer greeting="Productos populares" title="Productos detacados"/>}/>
-          <Route path='*' element={<BackToMain boton='Volver al inicio'ruta="/" mensaje='Página no encontrada'/>}/>
-          <Route path='/contacto' element={<ContactPage/>}/>
-          <Route path='/sobrenosotros' element={<AboutPage />}/>
-          <Route path='/cart' element={<Cart/>}/>
-          <Route path='/checkout' element={<FrmComprador />}/>
-          <Route path='/productos/:id' element={<ItemDetailContainer/>}/>
-          <Route path='/:categoryId' element={<ItemListContainer greeting={'Productos'}/>}/>          
+          <Route path='/TechUY_Matias_daSilva' element={<ItemListContainer greeting="Productos populares" title="Productos detacados"/>}/>
+          <Route path='/TechUY_Matias_daSilva/*' element={<BackToMain boton='Volver al inicio'ruta="/" mensaje='Página no encontrada'/>}/>
+          <Route path='/TechUY_Matias_daSilva/contacto' element={<ContactPage/>}/>
+          <Route path='/TechUY_Matias_daSilva/sobrenosotros' element={<AboutPage />}/>
+          <Route path='/TechUY_Matias_daSilva/cart' element={<Cart/>}/>
+          <Route path='/TechUY_Matias_daSilva/checkout' element={<FrmComprador />}/>
+          <Route path='/TechUY_Matias_daSilva/productos/:id' element={<ItemDetailContainer/>}/>
+          <Route path='/TechUY_Matias_daSilva/:categoryId' element={<ItemListContainer greeting={'Productos'}/>}/>          
         </Routes>
       </div>
       </Customprovider>

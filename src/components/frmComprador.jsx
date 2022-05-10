@@ -60,7 +60,7 @@ const FrmComprador = () => {
             <>
               <div className="leftPanelWrapper">
                 <h1>Ya casi terminas tu compra</h1>
-                <Link to={"/cart"}>
+                <Link to={"/TechUY_Matias_daSilva/cart"}>
                   <button>
                     <MdOutlineKeyboardArrowLeft />
                     <span>Volver al carrito</span>

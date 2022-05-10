@@ -29,7 +29,7 @@ const Cart = () => {
             );
           })}
           <div className="precioTotal"><strong>Total a pagar: </strong>{`US$${getPrecioTotal()}`}</div>
-          <Link className="finalizarBtn" to={'/checkout'}><button>Siguiente paso</button></Link> 
+          <Link className="finalizarBtn" to={'/TechUY_Matias_daSilva/checkout'}><button>Siguiente paso</button></Link> 
 
         </div>
         </div>

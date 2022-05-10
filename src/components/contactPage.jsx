@@ -1,8 +1,10 @@
 import React from "react";
 import "../styles/contactPage.scss";
+import AnimatedPage from '../components/animatedPage' 
 
 const ContactPage = () => {
   return (
+    <AnimatedPage>
     <div className="contactWrapper">
       <div className="leftText">
         <h1>Ponte en contacto</h1>
@@ -16,6 +18,7 @@ const ContactPage = () => {
         </form>
       </div>
     </div>
+    </AnimatedPage>
   );
 };
 

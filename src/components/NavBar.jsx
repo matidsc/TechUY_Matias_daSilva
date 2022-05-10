@@ -23,13 +23,13 @@ const NavBar = () => {
         size={25}
         className="hamburger"
       />
-      <Link to={"/"}>
+      <Link to={"/TechUY_Matias_daSilva"}>
         <h1>TechUY</h1>
       </Link>
       <nav className={menuIsVisible ? "visibleNav" : "hiddenNav"}>
         <ul>
           <li>
-            <Link onClick={()=>setShowMenu(!menuIsVisible)} to={"/"}>Inicio</Link>
+            <Link onClick={()=>setShowMenu(!menuIsVisible)} to={"/TechUY_Matias_daSilva"}>Inicio</Link>
           </li>
 
           <li>
@@ -46,7 +46,7 @@ const NavBar = () => {
             {categorias.map((item,index) => (
               <Link
               key={index}
-                to={item.direccion}
+                to={"TechUY_Matias_daSilva"+item.direccion}
                 onClick={() => {setShowCategories(!showCategories);setShowMenu(!menuIsVisible)}}
               >
                 <button>{item.nombre}</button>
@@ -54,10 +54,10 @@ const NavBar = () => {
             ))}
           </div>
           <li>
-            <Link onClick={()=>setShowMenu(!menuIsVisible)} to={'/sobrenosotros'}>Sobre Nosotros</Link>
+            <Link onClick={()=>setShowMenu(!menuIsVisible)} to={'/TechUY_Matias_daSilva/sobrenosotros'}>Sobre Nosotros</Link>
           </li>
           <li>
-            <Link onClick={()=>setShowMenu(!menuIsVisible)} to={'/contacto'}>Contacto</Link>
+            <Link onClick={()=>setShowMenu(!menuIsVisible)} to={'/TechUY_Matias_daSilva/contacto'}>Contacto</Link>
           </li>
         </ul>
       </nav>

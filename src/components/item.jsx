@@ -14,7 +14,7 @@ const Item = ({ producto }) => {
         <span className='modeloItem'>{producto.modelo}</span>
         <span className='precioItem'>{`${producto.precio} US$`}</span>
       </div>
-      <Link to={`/productos/${producto.id}`}>
+      <Link to={`/TechUY_Matias_daSilva/productos/${producto.id}`}>
         <button>Más detalles</button>
       </Link>
     </motion.div>

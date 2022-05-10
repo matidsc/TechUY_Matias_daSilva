@@ -7,7 +7,7 @@ const CartWidget = () => {
   const {getCantItems}= useContext(contexto)
 
   return (
-    <Link to={'/cart'} style={{color:'white'}}>
+    <Link to={'/TechUY_Matias_daSilva/cart'} style={{color:'white'}}>
       <div style={styleCart}>
         <AiOutlineShoppingCart style={styleCart} size={35} />
         <span style={getCantItems()<1?{display:"none"}: styleNotification}>{getCantItems()}</span>
