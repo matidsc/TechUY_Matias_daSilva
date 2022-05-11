@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/TechUY_Matias_daSilva/static/css/main.f1a228df.css",
-    "main.js": "/TechUY_Matias_daSilva/static/js/main.dce833ab.js",
+    "main.js": "/TechUY_Matias_daSilva/static/js/main.c3ff06ab.js",
     "index.html": "/TechUY_Matias_daSilva/index.html",
     "main.f1a228df.css.map": "/TechUY_Matias_daSilva/static/css/main.f1a228df.css.map",
-    "main.dce833ab.js.map": "/TechUY_Matias_daSilva/static/js/main.dce833ab.js.map"
+    "main.c3ff06ab.js.map": "/TechUY_Matias_daSilva/static/js/main.c3ff06ab.js.map"
   },
   "entrypoints": [
     "static/css/main.f1a228df.css",
-    "static/js/main.dce833ab.js"
+    "static/js/main.c3ff06ab.js"
   ]
 }
