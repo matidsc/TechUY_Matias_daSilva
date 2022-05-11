@@ -1,10 +1,10 @@
-import { React, useState,useContext } from "react";
+import { React, useState } from "react";
 import "../styles/NavBar.scss";
 import { HiMenuAlt1 } from "react-icons/hi";
 import CartWidget from "./CartWidget";
 import { Link } from "react-router-dom";
 import { IoIosArrowDropdownCircle } from "react-icons/io";
-import { contexto } from "../context/context";
+import { motion,AnimatePresence } from "framer-motion";
 const NavBar = () => {
   const [menuIsVisible, setShowMenu] = useState(false);
   const [showCategories, setShowCategories] = useState(false);
@@ -15,8 +15,12 @@ const NavBar = () => {
     { nombre: "Almacenamiento", direccion: "/SSD" },
     { nombre: "Equipos armados", direccion: "/ARMADOS" },
   ];
-  
+  const variants = {
+    open: { opacity: 1},
+    closed: { opacity:0},
+  }
   return (
+    
     <header className="topBarWrapper">
       <HiMenuAlt1
         onClick={() => setShowMenu(!menuIsVisible)}
@@ -26,6 +30,7 @@ const NavBar = () => {
       <Link to={"/TechUY_Matias_daSilva"}>
         <h1>TechUY</h1>
       </Link>
+      
       <nav className={menuIsVisible ? "visibleNav" : "hiddenNav"}>
         <ul>
           <li>
@@ -38,10 +43,17 @@ const NavBar = () => {
               <span>categorías</span>
             </a>
           </li>
+          <AnimatePresence>  
 
-          <div
+        {showCategories&&
+          <motion.div
+          variants={variants}
+          exit={{ opacity: 0}}
+          initial={{ opacity: 0}}
+          transition={{ duration: 0.3 }}
+
+          animate={showCategories?"open":"closed"}
             className="categoriesMenu"
-            style={{ display: showCategories ? "flex" : "none" }}
           >
             {categorias.map((item,index) => (
               <Link
@@ -52,7 +64,10 @@ const NavBar = () => {
                 <button>{item.nombre}</button>
               </Link>
             ))}
-          </div>
+          </motion.div>
+        }
+        
+          </AnimatePresence>
           <li>
             <Link onClick={()=>setShowMenu(!menuIsVisible)} to={'/TechUY_Matias_daSilva/sobrenosotros'}>Sobre Nosotros</Link>
           </li>

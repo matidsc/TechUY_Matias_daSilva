@@ -33,7 +33,7 @@ const Cart = () => {
 
         </div>
         </div>
-        </AnimatedPage>) : (<BackToMain mensaje='El carrito se encuentra vacío' ruta='/' boton='Sigue buscando productos'/>
+        </AnimatedPage>) : (<BackToMain mensaje='El carrito se encuentra vacío' ruta='/TechUY_Matias_daSilva' boton='Sigue buscando productos'/>
         
       )}
     </>

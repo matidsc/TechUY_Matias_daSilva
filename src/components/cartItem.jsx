@@ -46,7 +46,7 @@ const CartItem = ({
         className="deleteProduct"
         onClick={() => onDelete(id)}
       >
-        <AiTwotoneDelete color="F44336" size={30} />
+        <AiTwotoneDelete color="#F44336" size={30} />
       </button>
 
     </div>

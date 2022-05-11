@@ -55,7 +55,7 @@ const FrmComprador = () => {
     
         <div className="frmCompradorWrapper">
           {!showTicket && items.length===0?
-            <BackToMain mensaje="Nada que ver aquí" ruta="/" boton="Ir al inicio" />
+            <BackToMain mensaje="Nada que ver aquí" ruta="/TechUY_Matias_daSilva" boton="Ir al inicio" />
             :(!showTicket ? (
             <>
               <div className="leftPanelWrapper">
