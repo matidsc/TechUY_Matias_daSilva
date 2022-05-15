@@ -9,12 +9,15 @@ import FrmComprador from "./components/frmComprador";
 import BackToMain from "./components/backToMain";
 import AboutPage from "./components/aboutPage";
 import ContactPage from "./components/contactPage";
+import ResetScroll from "./components/resetScroll";
+import Footer from "./components/footer";
 function App() {
 
   return (
     <Router>
       <Customprovider>
       <div className="App">
+        <ResetScroll/>
         <NavBar/>
         <Routes>
           <Route path='/TechUY_Matias_daSilva' element={<ItemListContainer greeting="Productos populares" title="Productos detacados"/>}/>
@@ -26,6 +29,7 @@ function App() {
           <Route path='/TechUY_Matias_daSilva/productos/:id' element={<ItemDetailContainer/>}/>
           <Route path='/TechUY_Matias_daSilva/:categoryId' element={<ItemListContainer greeting={'Productos'}/>}/>          
         </Routes>
+        <Footer/>
       </div>
       </Customprovider>
     </Router>

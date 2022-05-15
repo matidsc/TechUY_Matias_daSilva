@@ -10,7 +10,10 @@ const loadingContainer = {
   top: "50%",
   transform: `translate(-50%, -50%)`,
 };
-
+const loadingPageWrapper={
+  width: "100%",
+  height: "90vh"
+}
 const loadingCircle = {
   display: "block",
   width: "1rem",
@@ -49,7 +52,7 @@ const loadingCircleTransition = {
 
 const Loading = () => {
   return (
-    <>
+    <div style={loadingPageWrapper}>
       <motion.div
         style={loadingContainer}
         variants={loadingContainerVariants}
@@ -72,7 +75,7 @@ const Loading = () => {
           transition={loadingCircleTransition}
         />
       </motion.div>
-    </>
+    </div>
   );
 };
 export default Loading;

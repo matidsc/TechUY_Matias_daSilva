@@ -1,0 +1,39 @@
+.footerWrapper{
+
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+
+    width: 100%;
+    background-color: var(--button-bg-dark);
+    bottom: 0;
+    footer{
+        
+        margin: auto;
+        display: flex;
+        height: 10vh;
+        color: white;
+        justify-content:space-around;
+        align-items: center;
+        width: 70%;
+        span,small{
+            text-align: center;
+       
+            width: 50%;
+        }
+    }
+}
+@media screen and (max-width:900px){
+    .footerWrapper{
+        footer{
+            flex-wrap: wrap;
+            height: auto;
+            row-gap: 2vh;
+            padding: 5%;
+            span,small{
+                width: 100%;
+            }
+        }
+    }
+}

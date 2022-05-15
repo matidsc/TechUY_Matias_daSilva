@@ -1,19 +1,18 @@
 .itemListContainer {
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 90%;
   height: fit-content;
   margin: auto;
   row-gap: 10%;
   justify-items: center;
   background-color: white;
   align-items: center;
+  min-height: 80vh;
   .imgPortada{
     margin-top: 5vh;
-
     display: block;
     align-self: center;
-    margin-bottom: 5vh;
     justify-self: center;
 
     width: 80%;
@@ -35,14 +34,12 @@ img{
     font-weight: 700;
     align-self: baseline;
     padding: 1% 2%;
-    margin-left: 2vw;
     background-color: #1a1818;
     color: white;
   }
 
   .itemList {
     display: flex;
-    padding: 2vw;
     width: 100%;
     justify-content: flex-start;
     align-items: flex-end;
@@ -50,6 +47,8 @@ img{
     height: auto;
     row-gap: 4vh;
     column-gap:3vh;
+    margin: 5vh 0;
+
     
     .item {
       display: flex;
@@ -58,7 +57,6 @@ img{
       background-color: white;
       min-height: 320px;
       height: 30vh;
-      width: 18%;
       flex: 0 1 200px;
       transition: all 0.5s ease;
       border-radius: 20px;
@@ -110,16 +108,15 @@ img{
     }
   }
 }
-@media screen and(max-width:900px) {
+@media screen and(max-width:1100px) {
   
-  .itemListContainer {
-    width: 100%;
-    
+
+    .itemListContainer{
     .itemList{
       justify-content: center;
 
-    }
-  }
+    }}
+  
 }
 
 @media screen and(max-width:550px) {
