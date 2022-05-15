@@ -7,6 +7,7 @@ import { getDocs, collection, query, where } from "firebase/firestore";
 import { db } from "../firebase/firebase";
 import BackToMain from "../components/backToMain";
 import AnimatedPage from "../components/animatedPage";
+import { Link } from "react-router-dom";
 const ItemListContainer = ({ greeting }) => {
   const [productos, setProductos] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -54,7 +55,8 @@ const ItemListContainer = ({ greeting }) => {
 
             <AnimatedPage>
 
-
+              {!categoryId&&<Link to={'/TechUY_Matias_daSilva/GPU'} className="imgPortada"><img src='https://i.imgur.com/dvi0atl.png'/></Link> 
+                }
               <h1 className="greeting">{categoryId ? categoryId : greeting}</h1>
               <ItemList productos={productos} />
               </AnimatedPage>
@@ -66,7 +68,7 @@ const ItemListContainer = ({ greeting }) => {
   ) : (
     <BackToMain
       boton="Volver al inicio"
-      ruta="/"
+      ruta="/TechUY_Matias_daSilva"
       mensaje="Categoría no válida"
     />
   );

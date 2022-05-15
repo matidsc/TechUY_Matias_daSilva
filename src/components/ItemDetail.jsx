@@ -25,7 +25,7 @@ const ItemDetail = ({ details }) => {
       <div className="itemDetailInfo">
         <h1>{details.modelo}</h1>
         <div className="priceWrapper">
-          <h2>{`US$${details.precio}`}</h2>
+          <h2>{`U$S${details.precio}`}</h2>
           <span style={{display:isInCart(details.id)?"inline":"none"}}  ><AiOutlineShoppingCart size={20}/>Producto en el carrito</span>
         </div>
         <p>{details.descripcion}</p>

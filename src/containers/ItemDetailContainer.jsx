@@ -40,7 +40,7 @@ const ItemDetailContainer = () => {
     </AnimatedPage>
 
   ) : (
-    <BackToMain boton='Volver al inicio' ruta='/' mensaje='Producto no encontrado'/>
+    <BackToMain boton='Volver al inicio' ruta='/TechUY_Matias_daSilva' mensaje='Producto no encontrado'/>
   );
 };
 
