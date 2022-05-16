@@ -80,7 +80,7 @@ const FrmComprador = () => {
                     name="nombre"
                     type="text"
                     placeholder="Nombre"
-                    pattern="[A-Za-z]"
+                    pattern="[a-zA-Z ]{2,254}"
                   />
                   <input
                     onChange={handleChange}
