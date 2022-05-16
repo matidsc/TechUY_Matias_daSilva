@@ -11,6 +11,7 @@ Las dependencias utilizadas :
 *   Sass - es la extensión de css más madura, estable y potente del mundo.
 *   React Router - permite realizar un enrutamiento dinámico para la aplicación.
 *   React Icons - engloba íconos de las librerías más populares como Font Awesome y MaterialUI, además de que utiliza imports de ES6 que permimte incluir solamente los íconos que el proyecto utiliza, mejorando el rendimiento. 
+*   Github Pages - Github Pages es un servicio de alojamiento de sitios estáticos.
 
 ## 🔗 Links de dependencias
 [Framer-motion](https://www.framer.com/motion/).
