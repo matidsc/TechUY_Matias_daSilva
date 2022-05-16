@@ -4,11 +4,10 @@ import "../styles/cart.scss";
 import CartItem from "./cartItem";
 import AnimatedPage from "./animatedPage";
 import BackToMain from "./backToMain";
-import { Link,useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 const Cart = () => {
   const { items, getPrecioTotal,deleteItem} = useContext(contexto);
-  const {id}= useParams();
-  console.log(id)
+
   return (
     <>
       {items.length > 0 ? (
