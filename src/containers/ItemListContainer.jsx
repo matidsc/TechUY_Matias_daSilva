@@ -20,7 +20,7 @@ const ItemListContainer = ({ greeting }) => {
 
     setTimeout(() => {
       const coleccionProductos = collection(db, "productos");
-      let consulta;
+      let consulta={};
       categoryId
         ? (consulta = query(
             coleccionProductos,
