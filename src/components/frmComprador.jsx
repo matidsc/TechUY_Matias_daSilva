@@ -24,8 +24,9 @@ const FrmComprador = () => {
   const handleChange = (event) => {
     setComprador({ ...comprador, [event.target.name]: event.target.value });
   };
-  const finalizarCompra = () => {
-    const coleccionVentas = collection(db, "ventas");
+  const finalizarCompra = (e) => {
+    e.preventDefault();
+        const coleccionVentas = collection(db, "ventas");
     addDoc(coleccionVentas, {
       comprador,
       items: items,
@@ -69,11 +70,12 @@ const FrmComprador = () => {
               </div>
 
               <div className="frmWrapper">
-                <form>
+                <form onSubmit={finalizarCompra}>
                   <h1>Ingresa tus datos</h1>      
                     <IoIosArrowDown onClick={scrollToBottom} size={15} />
                  
-                  <input
+                  <input 
+                    required
                     onChange={handleChange}
                     name="nombre"
                     type="text"
@@ -86,12 +88,13 @@ const FrmComprador = () => {
                     placeholder="Teléfono"
                   />
                   <input
+                    required
                     onChange={handleChange}
                     name="email"
                     type="email"
                     placeholder="Email"
                   />
-                  <button type="button" onClick={() => finalizarCompra()}>
+                  <button type="submit">
                     Confirmar compra
                   </button>
                 </form>

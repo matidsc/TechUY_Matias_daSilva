@@ -9,11 +9,13 @@ import BackToMain from "../components/backToMain";
 import AnimatedPage from '../components/animatedPage' 
 
 const ItemDetailContainer = () => {
+
   const [details, setDetails] = useState([]);
   const { id } = useParams();
   const [isLoading, setIsLoading] = useState(true);
   const [itemExists, setItemExists] = useState(true);
   useEffect(() => {
+  
     setIsLoading(true);
 
     setTimeout(() => {

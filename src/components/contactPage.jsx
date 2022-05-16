@@ -10,11 +10,11 @@ const ContactPage = () => {
         <h1>Ponte en contacto</h1>
       </div>
       <div className="frmWrapper">
-        <form onSubmit='return false'>
-          <input type='text' placeholder="Nombre" />
+        <form>
+          <input type='text' placeholder="Nombre" pattern="[A-Za-z]"/>
           <input type='text' placeholder="Motivo de la consulta" />
           <input type='email' placeholder="Email" />
-          <input type={"submit"} value='Contactarse'/>
+          <input type="submit" value='Contactarse'/>
         </form>
       </div>
     </div>
