@@ -55,7 +55,7 @@ const ItemListContainer = ({ greeting }) => {
 
             <AnimatedPage>
 
-              {!categoryId&&<Link to={'/TechUY_Matias_daSilva/GPU'} className="imgPortada"><img src='https://i.imgur.com/dvi0atl.png'/></Link> 
+              {!categoryId&&<Link to={'/TechUY_Matias_daSilva/GPU'} className="imgPortada"><img alt="RTX 3000 Nvidia" src='https://i.imgur.com/dvi0atl.png'/></Link> 
                 }
               <h1 className="greeting">{categoryId ? categoryId : greeting}</h1>
               <ItemList productos={productos} />

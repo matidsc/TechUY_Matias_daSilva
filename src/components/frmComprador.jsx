@@ -80,11 +80,12 @@ const FrmComprador = () => {
                     name="nombre"
                     type="text"
                     placeholder="Nombre"
+                    pattern="[A-Za-z]"
                   />
                   <input
                     onChange={handleChange}
                     name="telefono"
-                    type="tel"
+                    type="number"
                     placeholder="Teléfono"
                   />
                   <input

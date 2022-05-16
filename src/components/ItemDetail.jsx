@@ -21,14 +21,16 @@ const ItemDetail = ({ details }) => {
       transition={{ delay: 0.6 }}
       className="itemDetail"
     >
-      <img src={details.pictureURL}></img>
+      <img alt={details.modelo} src={details.pictureURL}></img>
       <div className="itemDetailInfo">
         <h1>{details.modelo}</h1>
         <div className="priceWrapper">
           <h2>{`U$S${details.precio}`}</h2>
           <span style={{display:isInCart(details.id)?"inline":"none"}}  ><AiOutlineShoppingCart size={20}/>Producto en el carrito</span>
         </div>
-        <p>{details.descripcion}</p>
+        <ul> {details.descripcion.map((desc,index) => {
+            return <li>{desc}</li>
+        })}</ul>
         <div className="itemDetailInteraction">
           {itemCount > 0 ? (
             <Link to={"/TechUY_Matias_daSilva/cart"} className=" finalizarComprabtn">

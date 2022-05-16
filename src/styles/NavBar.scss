@@ -102,8 +102,8 @@
       display: block;
       min-width: 0;
       width: 100%;
-      height: 35vh;
-      padding: 10%;
+      height: 40vh;
+      padding: 5% 10%;
       position: absolute;
       top: 10vh;
       background-color: rgb(19, 19, 19);
@@ -119,7 +119,7 @@
         width: 100vw;
         height: auto;
         flex-direction: column;
-        top: 35vh;
+        top: 40vh;
         row-gap: 10px;
         button {
           height: 5vh;
@@ -133,6 +133,13 @@
 
     .cartWrapper {
       order: 3;
+    }
+  }
+}
+@media screen and(max-width:768px) {
+  .topBarWrapper {
+    .visibleNav{
+      padding: 10%;
     }
   }
 }

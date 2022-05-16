@@ -26,7 +26,7 @@ const CartItem = ({
   return (
     <>
     <div className="cartItem">
-      <img src={pictureURL} />
+      <img alt={modelo} src={pictureURL} />
       <span className="modeloItem">{modelo}</span>
       <div className="setCantWrapper">
         <button onClick={deleteOne} className="setCantItemsbtn">

@@ -42,9 +42,13 @@
           }
         }
       }
-      p{
-        font-weight: 500;
+      ul{
+        list-style-position: inside;
+        li{
+          font-weight: 500;
+        }
       }
+      
       .itemDetailInteraction {
         width: 60%;
         height: 20%;
