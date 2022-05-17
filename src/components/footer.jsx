@@ -1,13 +1,12 @@
 import React from "react";
+import { useMatch } from "react-router-dom";
 import "../styles/footer.scss";
-import { useLocation } from "react-router-dom";
 const Footer = () => {
-  const path = useLocation().pathname;
+  const match = useMatch("/TechUY_Matias_daSilva/productos/:id")
 
-  const location = path.split("/")[2];
   return (
-    location !== "productos" && (
-      <div className="footerWrapper">
+   !match&&
+   <div className="footerWrapper">
         <footer>
           <span className="footer_direccion">
             18 de Julio 4823 esq. Avenida Uruguay
@@ -16,7 +15,7 @@ const Footer = () => {
           <small className="footer_copy"> ™Copyright © 2022 TechUY</small>
         </footer>
       </div>
-    )
+    
   );
 };
 

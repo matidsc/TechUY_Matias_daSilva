@@ -4,6 +4,7 @@ const { Provider } = contexto;
 
 const Customprovider = ({ children }) => {
   const [items, setItems] = useState([]);
+
   const addItem = (details, count) => {
     if (isInCart(details.id)) {
       const index = items.indexOf(items.find((item) => item.id === details.id));
@@ -34,16 +35,14 @@ const Customprovider = ({ children }) => {
     });
     return cant;
   };
-  const getCantInCart=(id)=>{
-
-    if (isInCart(id)){
-      var item= items.find((item) => item.id === id)
+  const getCantInCart = (id) => {
+    if (isInCart(id)) {
+      var item = items.find((item) => item.id === id);
       return item.cantidad;
-    }else{
-      return 0
+    } else {
+      return 0;
     }
-    
-  }
+  };
 
   const getPrecioTotal = () => {
     var precioTotal = 0;

@@ -11,8 +11,9 @@ import AboutPage from "./components/aboutPage";
 import ContactPage from "./components/contactPage";
 import ResetScroll from "./components/resetScroll";
 import Footer from "./components/footer";
-function App() {
 
+function App() {
+  
   return (
     <Router>
       <Customprovider>
@@ -30,7 +31,7 @@ function App() {
           <Route path='/TechUY_Matias_daSilva/checkout' element={<FrmComprador />}/>
           <Route path='/TechUY_Matias_daSilva/:categoryId' element={<ItemListContainer greeting={'Productos'}/>}/>          
         </Routes>
-        <Footer />
+        <Footer/>
 
       </div>
       </Customprovider>

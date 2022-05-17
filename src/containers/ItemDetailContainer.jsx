@@ -7,7 +7,6 @@ import { doc, getDoc} from "firebase/firestore";
 import { db } from "../firebase/firebase";
 import BackToMain from "../components/backToMain";
 import AnimatedPage from '../components/animatedPage' 
-
 const ItemDetailContainer = () => {
 
   const [details, setDetails] = useState([]);
@@ -27,7 +26,10 @@ const ItemDetailContainer = () => {
           ?setItemExists(false)
           :(setDetails({ id: producto.id, ...producto.data() })
           ,setItemExists(true)
-          ,setIsLoading(false))
+          ,setIsLoading(false)
+
+          )
+        
       ));
 
     }, 2000);
