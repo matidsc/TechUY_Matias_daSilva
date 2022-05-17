@@ -29,7 +29,7 @@ const ItemDetail = ({ details }) => {
           <span style={{display:isInCart(details.id)?"inline":"none"}}  ><AiOutlineShoppingCart size={20}/>Producto en el carrito</span>
         </div>
         <ul> {details.descripcion.map((desc,index) => {
-            return <li>{desc}</li>
+            return <li key={index}>{desc}</li>
         })}</ul>
         <div className="itemDetailInteraction">
           {itemCount > 0 ? (

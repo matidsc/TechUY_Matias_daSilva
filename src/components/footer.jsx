@@ -5,6 +5,7 @@ const Footer = () => {
   const path = useLocation().pathname;
 
   const location = path.split("/")[3];
+  console.log(location)
   return (
     location !== "productos" && (
       <div className="footerWrapper">
