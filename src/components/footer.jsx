@@ -4,8 +4,7 @@ import { useLocation } from "react-router-dom";
 const Footer = () => {
   const path = useLocation().pathname;
 
-  const location = path.split("/")[3];
-  console.log(location)
+  const location = path.split("/")[2];
   return (
     location !== "productos" && (
       <div className="footerWrapper">
